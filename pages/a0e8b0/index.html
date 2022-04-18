@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端的docker 10分钟真 · 快速入门指南 | DK Rao&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.1">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.3919ba52.css" as="style"><link rel="preload" href="/assets/js/app.716fe47e.js" as="script"><link rel="preload" href="/assets/js/2.9f6858d3.js" as="script"><link rel="preload" href="/assets/js/31.609e9eb1.js" as="script"><link rel="prefetch" href="/assets/js/10.6704745a.js"><link rel="prefetch" href="/assets/js/11.90b750d6.js"><link rel="prefetch" href="/assets/js/12.390a3114.js"><link rel="prefetch" href="/assets/js/13.810ffd17.js"><link rel="prefetch" href="/assets/js/14.4fe8b70c.js"><link rel="prefetch" href="/assets/js/15.f71d32d4.js"><link rel="prefetch" href="/assets/js/16.391c31ee.js"><link rel="prefetch" href="/assets/js/17.2de02329.js"><link rel="prefetch" href="/assets/js/18.166fff39.js"><link rel="prefetch" href="/assets/js/19.691c6cb4.js"><link rel="prefetch" href="/assets/js/20.ab815a7f.js"><link rel="prefetch" href="/assets/js/21.88a25baa.js"><link rel="prefetch" href="/assets/js/22.1401e0ab.js"><link rel="prefetch" href="/assets/js/23.2b67c51f.js"><link rel="prefetch" href="/assets/js/24.69801a5f.js"><link rel="prefetch" href="/assets/js/25.fcbeaea9.js"><link rel="prefetch" href="/assets/js/26.5ecfcf53.js"><link rel="prefetch" href="/assets/js/27.94a90f86.js"><link rel="prefetch" href="/assets/js/28.73063c1a.js"><link rel="prefetch" href="/assets/js/29.d02c6903.js"><link rel="prefetch" href="/assets/js/3.5a752c09.js"><link rel="prefetch" href="/assets/js/30.80a69435.js"><link rel="prefetch" href="/assets/js/32.99b37cc8.js"><link rel="prefetch" href="/assets/js/33.74cac8f6.js"><link rel="prefetch" href="/assets/js/34.6665a841.js"><link rel="prefetch" href="/assets/js/35.74e40029.js"><link rel="prefetch" href="/assets/js/36.77b3f395.js"><link rel="prefetch" href="/assets/js/37.9ab4af59.js"><link rel="prefetch" href="/assets/js/38.80e27604.js"><link rel="prefetch" href="/assets/js/39.19a869ec.js"><link rel="prefetch" href="/assets/js/4.00acf534.js"><link rel="prefetch" href="/assets/js/40.1239bcbb.js"><link rel="prefetch" href="/assets/js/41.659436c0.js"><link rel="prefetch" href="/assets/js/42.42eede79.js"><link rel="prefetch" href="/assets/js/43.59a92308.js"><link rel="prefetch" href="/assets/js/44.594c19ef.js"><link rel="prefetch" href="/assets/js/45.9e299c1d.js"><link rel="prefetch" href="/assets/js/46.8eea91f3.js"><link rel="prefetch" href="/assets/js/47.5c0efa90.js"><link rel="prefetch" href="/assets/js/48.3a64a13b.js"><link rel="prefetch" href="/assets/js/49.6cc55a24.js"><link rel="prefetch" href="/assets/js/5.2119b6f0.js"><link rel="prefetch" href="/assets/js/50.9c20d254.js"><link rel="prefetch" href="/assets/js/51.537471e2.js"><link rel="prefetch" href="/assets/js/52.d6558603.js"><link rel="prefetch" href="/assets/js/53.105359f0.js"><link rel="prefetch" href="/assets/js/6.af3b212b.js"><link rel="prefetch" href="/assets/js/7.adb0f8cf.js"><link rel="prefetch" href="/assets/js/8.f85f9d36.js"><link rel="prefetch" href="/assets/js/9.296841d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3919ba52.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/EB-logo.png" alt="DK Rao's Blog" class="logo"> <span class="site-name can-hide">DK Rao's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://i.ibb.co/s5q9nq6/f2097d47b248127e.png"> <div class="blogger-info"><h3>DK Rao</h3> <span>前端界的前行者</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端的docker 10分钟真 · 快速入门指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/a0e8b0/#_1-docker是什么" class="sidebar-link">1 docker是什么</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a0e8b0/#_2-docker-基础" class="sidebar-link">2 docker 基础</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a0e8b0/#_3-安装" class="sidebar-link">3 安装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a0e8b0/#_4-实战-部署vue2和vue3项目" class="sidebar-link">4 实战：部署vue2和vue3项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/a0e8b0/#_4-1-准备vue2-、-vue3项目" class="sidebar-link">4.1 准备vue2 、 vue3项目</a></li><li class="sidebar-sub-header"><a href="/pages/a0e8b0/#_4-2-创建运行docker容器" class="sidebar-link">4.2 创建运行docker容器</a></li><li class="sidebar-sub-header"><a href="/pages/a0e8b0/#_4-3-调试" class="sidebar-link">4.3 调试</a></li></ul></li><li><a href="/pages/a0e8b0/#_5-常用操作命令" class="sidebar-link">5 常用操作命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/a0e8b0/#镜像操作命令" class="sidebar-link">镜像操作命令</a></li><li class="sidebar-sub-header"><a href="/pages/a0e8b0/#容器操作命令" class="sidebar-link">容器操作命令</a></li></ul></li><li><a href="/pages/a0e8b0/#_6-进阶" class="sidebar-link">6 进阶</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-1cd794fe><div class="articleInfo" data-v-1cd794fe><!----> <div class="info" data-v-1cd794fe><div title="作者" class="author iconfont icon-touxiang" data-v-1cd794fe><a href="https://github.com/Jonathan-Rao" target="_blank" title="作者" class="beLink" data-v-1cd794fe>DK Rao</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1cd794fe><a href="javascript:;" data-v-1cd794fe>2022-01-13</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-1cd794fe><a href="/categories/?category=%E5%89%8D%E7%AB%AF" data-v-1cd794fe>前端 </a></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">
+          前端的docker 10分钟真 · 快速入门指南
+        </h1> <!----> <div class="theme-vdoing-content content__default"><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f25309c467d54003a69ec53243f37d5d~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp?" alt="给前端的docker 10分钟真 - 快速入门指南"></p> <h1 id="给前端的docker-10分钟真-快速入门指南"><a href="#给前端的docker-10分钟真-快速入门指南" class="header-anchor">#</a> 给前端的docker 10分钟真 - 快速入门指南</h1> <blockquote><p>2022年了，咱前端花点时间学点docker，不吃亏不上当</p></blockquote> <p>还没有了解过docker吗，没关系，咱模拟几个场景，两分钟就给你搞明白它是什么，我们什么时候需要它</p> <p>接着我们拿剩下的七八分钟用docker来同时部署vue2、vue3两个项目，对就是这么快！</p> <h2 id="_1-docker是什么"><a href="#_1-docker是什么" class="header-anchor">#</a> 1 docker是什么</h2> <p>场景模拟1：单机</p> <p>在公司勤勤恳恳的你很快得到了领导的认可，这天他让你接手这下面几个新项目，你需要将它们安装在自己的电脑上</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84c2c41a62c648aab6f2fd5185779d58~tplv-k3u1fbpfcp-watermark.awebp" alt="single"></p> <p>慧眼的你发现，这里有多个不同版本的nodejs和mysql：还行，对我来说小意思</p> <p>场景模拟2：多机</p> <p>此时公司新来了3个前端实习生和新人，领导要你把这几个项目也给他们安装在本地电脑运行</p> <p>由于公司历史等原因，暂时只能给他们配置了不同操作系统的电脑：win7、win10、OSX等等</p> <p>现在你需要把这几个项目分别安装在几台电脑的不同操作系统上，看图</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b31848e522bd4290b7536ae20fa88b71~tplv-k3u1fbpfcp-watermark.awebp" alt="multi"></p> <p>机智的你发现，你的头现在一个比两个大</p> <p>&quot;安装麻烦费时间，新来的人做项目的时候，还得针对不同项目去切换匹配的版本来用，容易犯错这也给主机环境造成污染这也给主机环境造成污染，一想到未来还有更多的项目要这么搞，这时候可能有人已经想跑路了&quot;</p> <p>辛辛苦苦安装完成后，看你这么给力，领导又让你在公司内网的两台小服务器上部署一下这几个项目，做公共的开发和测试环境，哦对这两台服务器是linux的，你是不是准备开始百度如何在linux 安装node 和 mysql了？而且还是要安装多个版本的。要是这两台服务器的linux系统还不同呢？</p> <p>现在到轮到你想提桶了吧</p> <p>3 docker出场</p> <p>别慌，这时候docker出场了，它能帮你抹平不同系统的应用程序安装差异</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ccfff88e1ea84ee9bf0f588d455c99b4~tplv-k3u1fbpfcp-watermark.awebp" alt="multi-docker"></p> <p>等等，那为啥不用虚拟机？</p> <p>因为虚拟机启动慢、损耗大、占用资源多，在不同系统上的迁移/拓展比较复杂</p> <p>但是docker它不会啊，它启动是秒级的，占用资源少，香不香，跨平台还方便复制</p> <p>写好配置后，它一个命令就在电脑上同时安装不同版本的nodej、msyql、nginx 等而且是互相隔离独立同时运行，这时候还不需要你手动来回切换</p> <p>上面的问题不就轻松解决了吗，现在你对docker感兴趣了没</p> <h2 id="_2-docker-基础"><a href="#_2-docker-基础" class="header-anchor">#</a> 2 docker 基础</h2> <p>现在我们开始来了解一下docker的基础吧</p> <p>docker 分几个概念：镜像、容器、仓库</p> <p>镜像：就是像是我们装机时候需要的系统盘或者系统镜像文件，这里它负责创建docker容器的，有很多官方现成的镜像：node、mysql、monogo、nginx可以从远程仓库下载</p> <p>容器：可以比拟成一个迷你的系统，例如一个只安装mysql5.7的linux最小系统，当然你喜欢也可以把mysql、node安装在同一个容器中，记住**，容器与容器，容器和主机都是互相隔离的**</p> <p>仓库：仓库就像是github那样的，我们可以制作镜像然后push 提交到云端的仓库，也可以从仓库 pull 下载镜像</p> <h2 id="_3-安装"><a href="#_3-安装" class="header-anchor">#</a> 3 安装</h2> <p>docker的安装很简单，win、osx都是图形界面安装，linux的也几行命令,现在的mac的m1芯片系列也支持了，这里我们先略过安装步骤，要快！先看完！</p> <p>ps:在m1芯片的docker上安装mysql需要稍加点配置</p> <p>安装好运行下方代码查看</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker -v
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="_4-实战-部署vue2和vue3项目"><a href="#_4-实战-部署vue2和vue3项目" class="header-anchor">#</a> 4 实战：部署vue2和vue3项目</h2> <p>安装好docker后，我们现在来实战了，搓搓手</p> <p>我们要让电脑同时运行nodejs10和nodejs12多个版本</p> <blockquote><p>ps: 咱先快速入门，我们暂时先把不同版本的mysql安装放一边哈</p></blockquote> <h3 id="_4-1-准备vue2-、-vue3项目"><a href="#_4-1-准备vue2-、-vue3项目" class="header-anchor">#</a> 4.1 准备vue2 、 vue3项目</h3> <p>先跟着一起做，咱后面再解释</p> <p>现在新建一个文件放我们的项目：命名 为 :my-repository</p> <p>安装vue2+webpack项目</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 0 命令行进入到该文件夹的位置：
+cd /你的电脑具体的文件路径/my-repository
+
+# 1.现在安装vue-cli
+npm install -g @vue/cli
+
+# 2.查看vue-cli安装成功否
+vue --version
+#我这里是@vue/cli 4.5.15
+
+# 3. 用vue-cli快速创建项目,安装选项我们如下
+# &gt; ❯ Default ([Vue 2] babel, eslint)
+# &gt; ❯ npm包管理
+vue create my-app-vue2
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>安装vue3+vite项目</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#先安装vite最新版
+npm init vite@latest
+
+# 创建vue3项目
+npm init vite@latest my-app-vue3 --template vue
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>//vite需要开启网络访问
+//vite.config.js 开启host
+export default defineConfig({
+  plugins: [vue()],
++  server: {
++    host: '0.0.0.0',
++  },
+});
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>#安装完成后我们的目录是这样的
+my-repository
+├── my-app-vue2
+│   ├── public
+│   └── src
+│       ├── assets
+│       └── components
+└── my-app-vue3
+    ├── public
+    └── src
+        ├── assets
+        └── components
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="_4-2-创建运行docker容器"><a href="#_4-2-创建运行docker容器" class="header-anchor">#</a> 4.2 创建运行docker容器</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 0 先进入我们刚才安装了vue项目的文件夹位置
+cd my-repository
+
+# 1 执行pwd可以获取当前文件夹在电脑的绝对目录
+pwd
+# /Users/eric/my-repository
+
+# 2 运行创建docker容器1：承载 vue2+webpack+nodejs10
+docker run -it -d --name myvue2 --privileged -p 8081:8080 -v  /Users/eric/my-repository/my-app-vue2:/app/vue node:10.16.2 /bin/bash -c &quot;cd /app/vue &amp;&amp; node -v &amp;&amp; npm install &amp;&amp; npm run serve&quot;
+
+# 3 运行创建docker容器2：承载 vue3+vite+nodejs12
+docker run -it -d --name myvue3 --privileged -p 8080:3000 -v /Users/eric/my-repository/my-app-vue3:/app/vue node:12.22.6 /bin/bash -c &quot;cd /app/vue &amp;&amp; node -v &amp;&amp; npm install &amp;&amp; npm run dev&quot;
+
+#运行成功后 查看容器运行情况
+docker ps -a
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>成功运行后会出现</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14190fdc31d74b6b90061941b49be066~tplv-k3u1fbpfcp-watermark.awebp" alt="ps-a"></p> <p>我们可以看到容器的启动状态、端口映射、容器名字</p> <p>打开浏览器，我们访问localhost:8080和localhost:8081可以看到</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d809c417c4dd4d14ba9fbd03c72c44b0~tplv-k3u1fbpfcp-watermark.awebp" alt="vue2 &amp;&amp; vue3"></p> <p>如果出错可看下面第三点：[调试](###3 调试)：运行如下命令查看原因</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker logs -f container_id/containe_name
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>上面那一坨<code>docker run xxxxx</code> 的代码到底是啥，现在我们就来捋顺</p> <p>首先这个<code>docker run</code> 是可以用来创建同时启动运行容器</p> <p>先换行来看 : shell 脚本太长的时候我们可以用 &quot;&quot;把一行命令分成多行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker run\
+-it\
+-d\
+--name myvue2\
+--privileged\
+-p 8081:8080\
+-v /Users/eric/my-repository/my-app-vue2:/app/vue\
+node:10.16.2\
+/bin/bash -c &quot;cd /app/vue2 &amp;&amp; node -v &amp;&amp; npm install &amp;&amp; npm run serve&quot;
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>这里我们使用 <code>docker run</code> 命令可以下载镜像 -&gt;通过镜像创建容器 -&gt;启动运行容器</p> <p>参数解析：</p> <table><thead><tr><th>参数</th> <th>描述</th></tr></thead> <tbody><tr><td>-d</td> <td>以守护进程的方式让容器在后台运行，在这您之 前可能使用的是pm2来守护进程</td></tr> <tr><td>-it</td> <td>这里是 -i和 -t的缩写\</td></tr></tbody></table> <p>-i：告诉 Docker 容器保持标准输入流对容器开放,即使容器没有终端连接<br>
+告诉 Docker 为容器分配一个虚拟终端 |
+| --name myvue2 | 将容器命名为 myvue2，这样访问和操作容 器等就不需要输入一大串的容器ID |
+| --privileged | 让容器的用户在容器内能获取完全root权限 |
+| -p 8081:8080 | 将容器的8080端口映射到宿主机的8081端口上<br>
+这样我们访问本机的localhost:8081,就是访问到容器的8080端口<br>
+因为容器都是独立运行互相隔离的，容器与容器各自的8080端口、容器跟主机各自的8080端口都不是一个东西，主机只有在这给端口做映射才能访问到容器端口 |
+| -v /Users/eric/my-repository/my-app-vue2:/app/vue | 将主机的my-app-vue2目录(命令行这里只能写绝对路径哈)下的内容挂载到容器的目录/app/vue内，<br>
+如果容器的指定目录有文件/文件夹，将被清空<br>
+挂载后，容器修改 /app/vue目录的内容，也是在修改主机目录/Users/eric/my-repository/my-app-vue2内容 |
+| node:10.16.2 | 这里是指定nodejs，版本为10.16.2的镜像来创建容器<br>
+如果不指定版本，会默认下载当前镜像的最新版本 |
+| /bin/bash -c &quot;cd /app/vue2 &amp;&amp; node -v &amp;&amp; npm install &amp;&amp; npm run serve&quot; | /bin/bash：是在让容器分配的虚拟终端以 bash 模式执行命令<br>
+-c &quot;&quot;cd /app/vue2 &amp;&amp; node -v &amp;&amp; npm install &amp;&amp; npm run serve：只能执行一条 shell 命令，需要多个命令按需用&amp;&amp;、 |</p> <p>docker run的运行示意图</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/352f5d9252334d1ba1f57024020d752c~tplv-k3u1fbpfcp-watermark.awebp" alt="processon-run2"></p> <p>上面代码运行成功后我们的电脑就会有两个互相隔离独立运行的docker容器</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fddd2c38b9eb40ca9bfe69054dba795f~tplv-k3u1fbpfcp-watermark.awebp" alt="docker-vue2-vue3"></p> <h3 id="_4-3-调试"><a href="#_4-3-调试" class="header-anchor">#</a> 4.3 调试</h3> <p>常用的调试命令 1</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 运行后按ctrl + c 可退出
+docker logs -f contianer_name/container_id
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>当然容器内正在进行编译或者发生错误甚至退出的时候，我们可用此命令查看终端输出的信息</p> <p>🌰 ：运行成功后，查看myvue 容器的npm run serve 在终端上的实时输出信息</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#查看docker container的终端输出信息
+docker logs -f myvue2
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>常用的调试命令 2</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 打印出容器的端口映射、目录挂载、网络等等
+docker inspect myvue2
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_5-常用操作命令"><a href="#_5-常用操作命令" class="header-anchor">#</a> 5 常用操作命令</h2> <p>常用的操作命令表一栏，需要先收藏</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b78fab6013914e98826a7009cf849f51~tplv-k3u1fbpfcp-watermark.awebp" alt="Docker 基础指令 中"></p> <h3 id="镜像操作命令"><a href="#镜像操作命令" class="header-anchor">#</a> 镜像操作命令</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 搜索镜像
+docker search [images_name:tag]
+
+# 下载镜像（：指定版本）
+docker pull [images_name:tag]
+
+# 查看本地下载的镜像
+docker images
+
+# 自己构建镜像
+# 根据dockerfile的路径或者url构建镜像
+ docker build [OPTIONS] PATH|URL|-
+
+# 查看镜像的构建历史
+docker history [images_name]
+
+# 删除镜像
+# 需要先删除以此镜像为基础的容器
+ docker rmi [images_name]
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="容器操作命令"><a href="#容器操作命令" class="header-anchor">#</a> 容器操作命令</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 查看运行中的容器
+# 可以查看容器ID、基础镜像、容器名称、运行状态、端口映射等
+docker ps
+
+# 查看所有容器：包括停止的
+docker ps -a
+
+# 查看容器的信息
+# 例如端口号的映射、目录挂载
+docker inspect [images_name/images_id]
+
+# 启动和停止容器
+docker start/stop [container_name/container_id]
+
+#  重启容器
+#  使用场景实例：
+#  在加入新的npm包依赖需要重新编译的时候使用重启运行编译
+#  nginx容器的配置更新后需要重启生效
+docker restart [container_name/container_id]
+
+# 进入容器
+# ps:有些容器没有bash,需要改成/bin/sh，例如mysq、mongodb的
+# 退出人容器输入exit 回车键
+docker exec -it [container_name/container_id] /bin/bash
+
+# 删除容器
+# 在容器停止的状态才能删
+docker rm [container_name/container_id]
+
+# 容器主机文件拷
+# 将容器文件拷贝到主机
+docker cp [container_id/container_name] : [文件目录] [主机目录]
+
+# 将主机的目录拷贝到容器
+docker cp [主机目录] [container_id/container_name] : [文件目录]
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="_6-进阶"><a href="#_6-进阶" class="header-anchor">#</a> 6 进阶</h2> <p>如果没有合适的镜像，我们通常用Dockerfile来构建自定义镜像</p> <p>发现没，上面的<code>docker run</code> 只能创建启动一个docker容器，我们可以用<code>docker-compose</code>来一次启动多个容器，常用于单机下安装多个服务</p> <p>慢点再来更新，大家有兴趣也可以先看到我用docker 部署的<a href="https://juejin.cn/post/6867861517603438605" title="https://juejin.cn/post/6867861517603438605" target="_blank" rel="noopener noreferrer">Jenkins自动化部署 CI/CD 环境<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 里面也有docker-compose的使用</p></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Jonathan-Rao/edit/master/docs/_posts/前端/前端的docker 10分钟真 · 快速入门指南.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/tags/?tag=Docker" title="标签">#Docker</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/01/13, 16:01:00</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/bc431c/"><div>iOS最新打包发布流程</div></a> <span>04-18</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/4094f2/"><div>Vue3.2中的setup语法糖</div></a> <span>04-07</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/e02037/"><div>前端进阶高薪必看-CSS之手写篇</div></a> <span>04-07</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:515977826@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/Jonathan-Rao" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2022
+    <span>DK Rao | MIT License</span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.716fe47e.js" defer></script><script src="/assets/js/2.9f6858d3.js" defer></script><script src="/assets/js/31.609e9eb1.js" defer></script>
+  </body>
+</html>
