@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Javascript 总结（常用工具类的封装） | DK Rao&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.21b825ed.css" as="style"><link rel="preload" href="/assets/js/app.63f7405e.js" as="script"><link rel="preload" href="/assets/js/3.4c003ae3.js" as="script"><link rel="preload" href="/assets/js/2.1e9afdb9.js" as="script"><link rel="preload" href="/assets/js/53.2c4a3f34.js" as="script"><link rel="prefetch" href="/assets/js/1.dc850e31.js"><link rel="prefetch" href="/assets/js/10.5dbbc478.js"><link rel="prefetch" href="/assets/js/100.ff19186b.js"><link rel="prefetch" href="/assets/js/11.87e57194.js"><link rel="prefetch" href="/assets/js/12.4eece6bb.js"><link rel="prefetch" href="/assets/js/13.da88bff8.js"><link rel="prefetch" href="/assets/js/14.617fcb0e.js"><link rel="prefetch" href="/assets/js/15.e90ab816.js"><link rel="prefetch" href="/assets/js/16.217bdacc.js"><link rel="prefetch" href="/assets/js/17.2d36de58.js"><link rel="prefetch" href="/assets/js/18.09321884.js"><link rel="prefetch" href="/assets/js/19.b6545d31.js"><link rel="prefetch" href="/assets/js/20.3c7ccd65.js"><link rel="prefetch" href="/assets/js/21.9f3d9714.js"><link rel="prefetch" href="/assets/js/22.5bcf33e5.js"><link rel="prefetch" href="/assets/js/23.137a28d3.js"><link rel="prefetch" href="/assets/js/24.e9647410.js"><link rel="prefetch" href="/assets/js/25.e2f58923.js"><link rel="prefetch" href="/assets/js/26.dd88bede.js"><link rel="prefetch" href="/assets/js/27.3fa321d4.js"><link rel="prefetch" href="/assets/js/28.ef3548f7.js"><link rel="prefetch" href="/assets/js/29.9d932b65.js"><link rel="prefetch" href="/assets/js/30.3b1344cb.js"><link rel="prefetch" href="/assets/js/31.adb9ef94.js"><link rel="prefetch" href="/assets/js/32.ba3b310d.js"><link rel="prefetch" href="/assets/js/33.490aec31.js"><link rel="prefetch" href="/assets/js/34.3af32dbe.js"><link rel="prefetch" href="/assets/js/35.7ba2c423.js"><link rel="prefetch" href="/assets/js/36.45188d46.js"><link rel="prefetch" href="/assets/js/37.5aa1785c.js"><link rel="prefetch" href="/assets/js/38.2067f88b.js"><link rel="prefetch" href="/assets/js/39.f3777001.js"><link rel="prefetch" href="/assets/js/4.5cdec1e0.js"><link rel="prefetch" href="/assets/js/40.3e57f79d.js"><link rel="prefetch" href="/assets/js/41.6bab86e5.js"><link rel="prefetch" href="/assets/js/42.fc5c7ffb.js"><link rel="prefetch" href="/assets/js/43.882f3619.js"><link rel="prefetch" href="/assets/js/44.e0b4829e.js"><link rel="prefetch" href="/assets/js/45.9a8f29b4.js"><link rel="prefetch" href="/assets/js/46.e135ca80.js"><link rel="prefetch" href="/assets/js/47.a6036de5.js"><link rel="prefetch" href="/assets/js/48.d29a02a9.js"><link rel="prefetch" href="/assets/js/49.c7bc2bd4.js"><link rel="prefetch" href="/assets/js/5.250cdbf8.js"><link rel="prefetch" href="/assets/js/50.0b7f4d01.js"><link rel="prefetch" href="/assets/js/51.75cd77c1.js"><link rel="prefetch" href="/assets/js/52.9a8580a8.js"><link rel="prefetch" href="/assets/js/54.b5925329.js"><link rel="prefetch" href="/assets/js/55.9d030f6c.js"><link rel="prefetch" href="/assets/js/56.e9c1d955.js"><link rel="prefetch" href="/assets/js/57.2f34925d.js"><link rel="prefetch" href="/assets/js/58.a4eadcb3.js"><link rel="prefetch" href="/assets/js/59.25be9a24.js"><link rel="prefetch" href="/assets/js/6.d5177ab6.js"><link rel="prefetch" href="/assets/js/60.3494f023.js"><link rel="prefetch" href="/assets/js/61.57c595c0.js"><link rel="prefetch" href="/assets/js/62.f4e3be21.js"><link rel="prefetch" href="/assets/js/63.e40fa3d1.js"><link rel="prefetch" href="/assets/js/64.1464c9e9.js"><link rel="prefetch" href="/assets/js/65.ff5a9bdd.js"><link rel="prefetch" href="/assets/js/66.846ce21f.js"><link rel="prefetch" href="/assets/js/67.e2b7bec3.js"><link rel="prefetch" href="/assets/js/68.60d17170.js"><link rel="prefetch" href="/assets/js/69.34618919.js"><link rel="prefetch" href="/assets/js/70.fdb34293.js"><link rel="prefetch" href="/assets/js/71.d9d201ba.js"><link rel="prefetch" href="/assets/js/72.3a1c785d.js"><link rel="prefetch" href="/assets/js/73.f3d321c0.js"><link rel="prefetch" href="/assets/js/74.5f33d37c.js"><link rel="prefetch" href="/assets/js/75.281ea73f.js"><link rel="prefetch" href="/assets/js/76.465addf6.js"><link rel="prefetch" href="/assets/js/77.2564b7e8.js"><link rel="prefetch" href="/assets/js/78.a52c2e87.js"><link rel="prefetch" href="/assets/js/79.51c74067.js"><link rel="prefetch" href="/assets/js/80.dc3de84a.js"><link rel="prefetch" href="/assets/js/81.349bec82.js"><link rel="prefetch" href="/assets/js/82.fe3d6458.js"><link rel="prefetch" href="/assets/js/83.fececd3e.js"><link rel="prefetch" href="/assets/js/84.8abd5704.js"><link rel="prefetch" href="/assets/js/85.86950311.js"><link rel="prefetch" href="/assets/js/86.16cb092f.js"><link rel="prefetch" href="/assets/js/87.3e01636c.js"><link rel="prefetch" href="/assets/js/88.028ffdcf.js"><link rel="prefetch" href="/assets/js/89.0d2a51fb.js"><link rel="prefetch" href="/assets/js/9.23dd9dc1.js"><link rel="prefetch" href="/assets/js/90.8a58543f.js"><link rel="prefetch" href="/assets/js/91.eee5d437.js"><link rel="prefetch" href="/assets/js/92.458b922a.js"><link rel="prefetch" href="/assets/js/93.49ce0fe6.js"><link rel="prefetch" href="/assets/js/94.85821361.js"><link rel="prefetch" href="/assets/js/95.046b0fb4.js"><link rel="prefetch" href="/assets/js/96.b56d2320.js"><link rel="prefetch" href="/assets/js/97.7c1df4c9.js"><link rel="prefetch" href="/assets/js/98.7a0e133c.js"><link rel="prefetch" href="/assets/js/99.db916e56.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.db27a015.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.21b825ed.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/EB-logo.png" alt="DK Rao's Blog" class="logo"> <span class="site-name can-hide">DK Rao's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao/rdk-blog-dist" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://Jonathan-Rao.github.io/picx-images-hosting/20251017/f2097d47b248127e.mguj2u7f.jpg"> <div class="blogger-info"><h3>DK Rao</h3> <span>前端界的前行者</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao/rdk-blog-dist" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Javascript 总结（常用工具类的封装）</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/fb1e30/#javascript" class="sidebar-link">JavaScript</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_1-type-类型判断" class="sidebar-link">1. type 类型判断</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_2-date" class="sidebar-link">2. Date</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_3-array" class="sidebar-link">3. Array</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_4-string-字符串操作" class="sidebar-link">4. String 字符串操作</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_5-number" class="sidebar-link">5. Number</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_6-http" class="sidebar-link">6. Http</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_7-dom" class="sidebar-link">7. DOM</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_8-storage-储存操作" class="sidebar-link">8. Storage 储存操作</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_9-other-其它操作" class="sidebar-link">9. Other 其它操作</a></li></ul></li><li><a href="/pages/fb1e30/#css" class="sidebar-link">CSS</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/fb1e30/#_1-pc-reset-pc样式初始化" class="sidebar-link">1. pc-reset PC样式初始化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_2-phone-reset" class="sidebar-link">2. Phone-reset</a></li><li class="sidebar-sub-header level3"><a href="/pages/fb1e30/#_3-公共样式提取" class="sidebar-link">3. 公共样式提取</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><!----> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/Jonathan-Rao" target="_blank" title="作者" class="beLink" data-v-06225672>DK Rao</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-01-07</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-06225672><a href="/categories/?category=%E5%89%8D%E7%AB%AF" data-v-06225672>前端 </a></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">Javascript 总结（常用工具类的封装）<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="javascript"><a href="#javascript" class="header-anchor">#</a> JavaScript</h2> <h3 id="_1-type-类型判断"><a href="#_1-type-类型判断" class="header-anchor">#</a> 1. type 类型判断</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>isString (o) { //是否字符串
+    return Object.prototype.toString.call(o).slice(8, -1) === 'String'
+}
+
+isNumber (o) { //是否数字
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Number'
+}
+
+isBoolean (o) { //是否boolean
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Boolean'
+}
+
+isFunction (o) { //是否函数
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Function'
+}
+
+isNull (o) { //是否为null
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+}
+
+isUndefined (o) { //是否undefined
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
+}
+
+isObj (o) { //是否对象
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Object'
+}
+
+isArray (o) { //是否数组
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Array'
+}
+
+isDate (o) { //是否时间
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
+}
+
+isRegExp (o) { //是否正则
+    return Object.prototype.toString.call(o).slice(8, -1) === 'RegExp'
+}
+
+isError (o) { //是否错误对象
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Error'
+}
+
+isSymbol (o) { //是否Symbol函数
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Symbol'
+}
+
+isPromise (o) { //是否Promise对象
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
+}
+
+isSet (o) { //是否Set对象
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Set'
+}
+
+isFalse (o) {
+    if (!o || o === 'null' || o === 'undefined' || o === 'false' || o === 'NaN') return true
+        return false
+}
+
+isTrue (o) {
+    return !this.isFalse(o)
+}
+
+isIos () {
+    var u = navigator.userAgent;
+    if (u.indexOf('Android') &amp;gt; -1 || u.indexOf('Linux') &amp;gt; -1) {//安卓手机
+        // return &quot;Android&quot;;
+        return false
+    } else if (u.indexOf('iPhone') &amp;gt; -1) {//苹果手机
+        // return &quot;iPhone&quot;;
+        return true
+    } else if (u.indexOf('iPad') &amp;gt; -1) {//iPad
+        // return &quot;iPad&quot;;
+        return false
+    } else if (u.indexOf('Windows Phone') &amp;gt; -1) {//winphone手机
+        // return &quot;Windows Phone&quot;;
+        return false
+    }else{
+        return false
+    }
+}
+
+isPC () { //是否为PC端
+    var userAgentInfo = navigator.userAgent;
+    var Agents = [&quot;Android&quot;, &quot;iPhone&quot;,
+                &quot;SymbianOS&quot;, &quot;Windows Phone&quot;,
+                &quot;iPad&quot;, &quot;iPod&quot;];
+    var flag = true;
+    for (var v = 0; v &amp;lt; Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) &amp;gt; 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+browserType(){
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isOpera = userAgent.indexOf(&quot;Opera&quot;) &amp;gt; -1; //判断是否Opera浏览器
+    var isIE = userAgent.indexOf(&quot;compatible&quot;) &amp;gt; -1 &amp;amp;&amp;amp; userAgent.indexOf(&quot;MSIE&quot;) &amp;gt; -1 &amp;amp;&amp;amp; !isOpera; //判断是否IE浏览器
+    var isIE11 = userAgent.indexOf('Trident') &amp;gt; -1 &amp;amp;&amp;amp; userAgent.indexOf(&quot;rv:11.0&quot;) &amp;gt; -1;
+    var isEdge = userAgent.indexOf(&quot;Edge&quot;) &amp;gt; -1 &amp;amp;&amp;amp; !isIE; //判断是否IE的Edge浏览器  
+    var isFF = userAgent.indexOf(&quot;Firefox&quot;) &amp;gt; -1; //判断是否Firefox浏览器
+    var isSafari = userAgent.indexOf(&quot;Safari&quot;) &amp;gt; -1 &amp;amp;&amp;amp; userAgent.indexOf(&quot;Chrome&quot;) == -1; //判断是否Safari浏览器
+    var isChrome = userAgent.indexOf(&quot;Chrome&quot;) &amp;gt; -1 &amp;amp;&amp;amp; userAgent.indexOf(&quot;Safari&quot;) &amp;gt; -1; //判断Chrome浏览器
+
+    if (isIE) {
+        var reIE = new RegExp(&quot;MSIE (\\d+\\.\\d+);&quot;);
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp[&quot;$1&quot;]);
+        if(fIEVersion == 7) return &quot;IE7&quot;
+        else if(fIEVersion == 8) return &quot;IE8&quot;;
+        else if(fIEVersion == 9) return &quot;IE9&quot;;
+        else if(fIEVersion == 10) return &quot;IE10&quot;;
+        else return &quot;IE7以下&quot;//IE版本过低
+    }
+    if (isIE11) return 'IE11';
+    if (isEdge) return &quot;Edge&quot;;
+    if (isFF) return &quot;FF&quot;;
+    if (isOpera) return &quot;Opera&quot;;
+    if (isSafari) return &quot;Safari&quot;;
+    if (isChrome) return &quot;Chrome&quot;;
+}
+
+checkStr (str, type) {
+    switch (type) {
+        case 'phone':   //手机号码
+            return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str);
+        case 'tel':     //座机
+            return /^(0\d{2,3}-\d{7,8})(-\d{1,4})?$/.test(str);
+        case 'card':    //身份证
+            return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(str);
+        case 'pwd':     //密码以字母开头，长度在6~18之间，只能包含字母、数字和下划线
+            return /^[a-zA-Z]\w{5,17}$/.test(str)
+        case 'postal':  //邮政编码
+            return /[1-9]\d{5}(?!\d)/.test(str);
+        case 'QQ':      //QQ号
+            return /^[1-9][0-9]{4,9}$/.test(str);
+        case 'email':   //邮箱
+            return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
+        case 'money':   //金额(小数点2位)
+            return /^\d*(?:\.\d{0,2})?$/.test(str);
+        case 'URL':     //网址
+            return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;amp;:/~\+#]*[\w\-\@?^=%&amp;amp;/~\+#])?/.test(str)
+        case 'IP':      //IP
+            return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str);
+        case 'date':    //日期时间
+            return /^(\d{4})\-(\d{2})\-(\d{2}) (\d{2})(?:\:\d{2}|:(\d{2}):(\d{2}))$/.test(str) || /^(\d{4})\-(\d{2})\-(\d{2})$/.test(str)
+        case 'number':  //数字
+            return /^[0-9]$/.test(str);
+        case 'english': //英文
+            return /^[a-zA-Z]+$/.test(str);
+        case 'chinese': //中文
+            return /^[\\u4E00-\\u9FA5]+$/.test(str);
+        case 'lower':   //小写
+            return /^[a-z]+$/.test(str);
+        case 'upper':   //大写
+            return /^[A-Z]+$/.test(str);
+        case 'HTML':    //HTML标记
+            return /&amp;lt;(&quot;[^&quot;]*&quot;|'[^']*'|[^'&quot;&amp;gt;])*&amp;gt;/.test(str);
+        default:
+            return true;
+    }
+
+    // 严格的身份证校验
+    isCardID(sId) {
+        if (!/(^\d{15}$)|(^\d{17}(\d|X|x)$)/.test(sId)) {
+            alert('你输入的身份证长度或格式错误')
+            return false
+        }
+        //身份证城市
+        var aCity={11:&quot;北京&quot;,12:&quot;天津&quot;,13:&quot;河北&quot;,14:&quot;山西&quot;,15:&quot;内蒙古&quot;,21:&quot;辽宁&quot;,22:&quot;吉林&quot;,23:&quot;黑龙江&quot;,31:&quot;上海&quot;,32:&quot;江苏&quot;,33:&quot;浙江&quot;,34:&quot;安徽&quot;,35:&quot;福建&quot;,36:&quot;江西&quot;,37:&quot;山东&quot;,41:&quot;河南&quot;,42:&quot;湖北&quot;,43:&quot;湖南&quot;,44:&quot;广东&quot;,45:&quot;广西&quot;,46:&quot;海南&quot;,50:&quot;重庆&quot;,51:&quot;四川&quot;,52:&quot;贵州&quot;,53:&quot;云南&quot;,54:&quot;西藏&quot;,61:&quot;陕西&quot;,62:&quot;甘肃&quot;,63:&quot;青海&quot;,64:&quot;宁夏&quot;,65:&quot;新疆&quot;,71:&quot;台湾&quot;,81:&quot;香港&quot;,82:&quot;澳门&quot;,91:&quot;国外&quot;};
+        if(!aCity[parseInt(sId.substr(0,2))]) { 
+            alert('你的身份证地区非法')
+            return false
+        }
+
+        // 出生日期验证
+        var sBirthday=(sId.substr(6,4)+&quot;-&quot;+Number(sId.substr(10,2))+&quot;-&quot;+Number(sId.substr(12,2))).replace(/-/g,&quot;/&quot;),
+            d = new Date(sBirthday)
+        if(sBirthday != (d.getFullYear()+&quot;/&quot;+ (d.getMonth()+1) + &quot;/&quot; + d.getDate())) {
+            alert('身份证上的出生日期非法')
+            return false
+        }
+
+        // 身份证号码校验
+        var sum = 0,
+            weights =  [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2],
+            codes = &quot;10X98765432&quot;
+        for (var i = 0; i &amp;lt; sId.length - 1; i++) {
+            sum += sId[i] * weights[i];
+        }
+        var last = codes[sum % 11]; //计算出来的最后一位身份证号码
+        if (sId[sId.length-1] != last) { 
+            alert('你输入的身份证号非法')
+            return false
+        }
+
+        return true
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br></div></div><h3 id="_2-date"><a href="#_2-date" class="header-anchor">#</a> 2. Date</h3> <div class="language-/** line-numbers-mode"><pre class="language-text"><code> * 格式化时间
+ * 
+ * @param  {time} 时间
+ * @param  {cFormat} 格式
+ * @return {String} 字符串
+ *
+ * @example formatTime('2018-1-29', '{y}/{m}/{d} {h}:{i}:{s}') // -&amp;gt; 2018/01/29 00:00:00
+ */
+formatTime(time, cFormat) {
+    if (arguments.length === 0) return null
+    if ((time + '').length === 10) {
+        time = +time * 1000
+    }
+
+    var format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}', date
+    if (typeof time === 'object') {
+        date = time
+    } else {
+        date = new Date(time)
+    }
+
+    var formatObj = {
+        y: date.getFullYear(),
+        m: date.getMonth() + 1,
+        d: date.getDate(),
+        h: date.getHours(),
+        i: date.getMinutes(),
+        s: date.getSeconds(),
+        a: date.getDay()
+    }
+    var time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) =&amp;gt; {
+        var value = formatObj[key]
+        if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
+        if (result.length &amp;gt; 0 &amp;amp;&amp;amp; value &amp;lt; 10) {
+            value = '0' + value
+        }
+        return value || 0
+    })
+    return time_str
+}
+
+/**
+ * 返回指定长度的月份集合
+ * 
+ * @param  {time} 时间
+ * @param  {len} 长度
+ * @param  {direction} 方向：  1: 前几个月;  2: 后几个月;  3:前后几个月  默认 3
+ * @return {Array} 数组
+ * 
+ * @example   getMonths('2018-1-29', 6, 1)  // -&amp;gt;  [&quot;2018-1&quot;, &quot;2017-12&quot;, &quot;2017-11&quot;, &quot;2017-10&quot;, &quot;2017-9&quot;, &quot;2017-8&quot;, &quot;2017-7&quot;]
+ */
+getMonths(time, len, direction) {
+    var mm = new Date(time).getMonth(),
+        yy = new Date(time).getFullYear(),
+        direction = isNaN(direction) ? 3 : direction,
+        index = mm;
+    var cutMonth = function(index) {
+        if ( index &amp;lt;= len &amp;amp;&amp;amp; index &amp;gt;= -len) {
+            return direction === 1 ? formatPre(index).concat(cutMonth(++index)):
+                direction === 2 ? formatNext(index).concat(cutMonth(++index)):formatCurr(index).concat(cutMonth(++index))
+        }
+        return []
+    }
+    var formatNext = function(i) {
+        var y = Math.floor(i/12),
+            m = i%12
+        return [yy+y + '-' + (m+1)]
+    }
+    var formatPre = function(i) {
+        var y = Math.ceil(i/12),
+            m = i%12
+        m = m===0 ? 12 : m
+        return [yy-y + '-' + (13 - m)]
+    }
+    var formatCurr = function(i) {
+        var y = Math.floor(i/12),
+            yNext = Math.ceil(i/12),
+            m = i%12,
+            mNext = m===0 ? 12 : m
+        return [yy-yNext + '-' + (13 - mNext),yy+y + '-' + (m+1)]
+    }
+    // 数组去重
+    var unique = function(arr) {
+        if ( Array.hasOwnProperty('from') ) {
+            return Array.from(new Set(arr));
+        }else{
+            var n = {},r=[]; 
+            for(var i = 0; i &amp;lt; arr.length; i++){
+                if (!n[arr[i]]){
+                    n[arr[i]] = true; 
+                    r.push(arr[i]);
+                }
+            }
+            return r;
+        }
+    }
+    return direction !== 3 ? cutMonth(index) : unique(cutMonth(index).sort(function(t1, t2){
+        return new Date(t1).getTime() - new Date(t2).getTime()
+    }))
+}
+
+/**
+ * 返回指定长度的天数集合
+ * 
+ * @param  {time} 时间
+ * @param  {len} 长度
+ * @param  {direction} 方向： 1: 前几天;  2: 后几天;  3:前后几天  默认 3
+ * @return {Array} 数组
+ *
+ * @example date.getDays('2018-1-29', 6) // -&amp;gt; [&quot;2018-1-26&quot;, &quot;2018-1-27&quot;, &quot;2018-1-28&quot;, &quot;2018-1-29&quot;, &quot;2018-1-30&quot;, &quot;2018-1-31&quot;, &quot;2018-2-1&quot;]
+ */
+getDays(time, len, diretion) {
+    var tt = new Date(time)
+    var getDay = function(day) {
+        var t = new Date(time)
+        t.setDate(t.getDate() + day)
+        var m = t.getMonth()+1
+        return t.getFullYear()+'-'+m+'-'+t.getDate()
+    }
+    var arr = []
+    if (diretion === 1) {
+        for (var i = 1; i &amp;lt;= len; i++) {
+            arr.unshift(getDay(-i))
+        }
+    }else if(diretion === 2) {
+        for (var i = 1; i &amp;lt;= len; i++) {
+            arr.push(getDay(i))
+        }
+    }else {
+        for (var i = 1; i &amp;lt;= len; i++) {
+            arr.unshift(getDay(-i))
+        }
+        arr.push(tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate())
+        for (var i = 1; i &amp;lt;= len; i++) {
+            arr.push(getDay(i))
+        }
+    }
+    return diretion === 1 ? arr.concat([tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate()]) : 
+        diretion === 2 ? [tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate()].concat(arr) : arr
+}
+
+/**
+ * @param  {s} 秒数
+ * @return {String} 字符串 
+ *
+ * @example formatHMS(3610) // -&amp;gt; 1h0m10s
+ */
+formatHMS (s) {
+    var str = ''
+    if (s &amp;gt; 3600) {
+        str = Math.floor(s/3600)+'h'+Math.floor(s%3600/60)+'m'+s%60+'s'
+    }else if(s &amp;gt; 60) {
+        str = Math.floor(s/60)+'m'+s%60+'s'
+    }else{
+        str = s%60+'s'
+    }
+    return str
+}
+
+/*获取某月有多少天*/
+getMonthOfDay (time) {
+    var date = new Date(time)
+    var year = date.getFullYear()
+    var mouth = date.getMonth() + 1
+    var days
+
+    //当月份为二月时，根据闰年还是非闰年判断天数
+    if (mouth == 2) {
+        days = (year%4==0 &amp;amp;&amp;amp; year%100==0 &amp;amp;&amp;amp; year%400==0) || (year%4==0 &amp;amp;&amp;amp; year%100!=0) ? 28 : 29
+    } else if (mouth == 1 || mouth == 3 || mouth == 5 || mouth == 7 || mouth == 8 || mouth == 10 || mouth == 12) {
+        //月份为：1,3,5,7,8,10,12 时，为大月.则天数为31；
+        days = 31
+    } else {
+        //其他月份，天数为：30.
+        days = 30
+    }
+    return days
+}
+
+/*获取某年有多少天*/
+getYearOfDay (time) {
+    var firstDayYear = this.getFirstDayOfYear(time);
+    var lastDayYear = this.getLastDayOfYear(time);
+    var numSecond = (new Date(lastDayYear).getTime() - new Date(firstDayYear).getTime())/1000;
+    return Math.ceil(numSecond/(24*3600));
+}
+
+/*获取某年的第一天*/
+getFirstDayOfYear (time) {
+    var year = new Date(time).getFullYear();
+    return year + &quot;-01-01 00:00:00&quot;;
+}
+
+/*获取某年最后一天*/
+getLastDayOfYear (time) {
+    var year = new Date(time).getFullYear();
+    var dateString = year + &quot;-12-01 00:00:00&quot;;
+    var endDay = this.getMonthOfDay(dateString);
+    return year + &quot;-12-&quot; + endDay + &quot; 23:59:59&quot;;
+}
+
+/*获取某个日期是当年中的第几天*/
+getDayOfYear (time) {
+    var firstDayYear = this.getFirstDayOfYear(time);
+    var numSecond = (new Date(time).getTime() - new Date(firstDayYear).getTime())/1000;
+    return Math.ceil(numSecond/(24*3600));
+}
+
+/*获取某个日期在这一年的第几周*/
+getDayOfYearWeek (time) {
+    var numdays = this.getDayOfYear(time);
+    return Math.ceil(numdays / 7);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br></div></div><h3 id="_3-array"><a href="#_3-array" class="header-anchor">#</a> 3. Array</h3> <div class="language-/*判断一个元素是否在数组中*/ line-numbers-mode"><pre class="language-text"><code>contains (arr, val) {
+    return arr.indexOf(val) != -1 ? true : false;
+}
+
+/**
+ * @param  {arr} 数组
+ * @param  {fn} 回调函数
+ * @return {undefined}
+ */
+each (arr, fn) {
+    fn = fn || Function;
+    var a = [];
+    var args = Array.prototype.slice.call(arguments, 1);
+    for(var i = 0; i &amp;lt; arr.length; i++) {
+        var res = fn.apply(arr, [arr[i], i].concat(args));
+        if(res != null) a.push(res);
+    }
+}
+
+/**
+ * @param  {arr} 数组
+ * @param  {fn} 回调函数
+ * @param  {thisObj} this指向
+ * @return {Array} 
+ */
+map (arr, fn, thisObj) {
+    var scope = thisObj || window;
+    var a = [];
+    for(var i = 0, j = arr.length; i &amp;lt; j; ++i) {
+        var res = fn.call(scope, arr[i], i, this);
+        if(res != null) a.push(res);
+    }
+    return a;
+}
+
+/**
+ * @param  {arr} 数组
+ * @param  {type} 1：从小到大   2：从大到小   3：随机
+ * @return {Array}
+ */
+sort (arr, type = 1) {
+    return arr.sort( (a, b) =&amp;gt; {
+        switch(type) {
+            case 1:
+                return a - b;
+            case 2:
+                return b - a;
+            case 3:
+                return Math.random() - 0.5;
+            default:
+                return arr;
+        }
+    })
+}
+
+/*去重*/
+unique (arr) {
+    if ( Array.hasOwnProperty('from') ) {
+        return Array.from(new Set(arr));
+    }else{
+        var n = {},r=[]; 
+        for(var i = 0; i &amp;lt; arr.length; i++){
+            if (!n[arr[i]]){
+                n[arr[i]] = true; 
+                r.push(arr[i]);
+            }
+        }
+        return r;
+    }
+    // 注：上面 else 里面的排重并不能区分 2 和 '2'，但能减少用indexOf带来的性能,暂时没找到替代的方法。。。
+    /* 正确排重
+    if ( Array.hasOwnProperty('from') ) {
+        return Array.from(new Set(arr))
+    }else{
+        var r = [], NaNBol = true
+        for(var i=0; i &amp;lt; arr.length; i++) {
+            if (arr[i] !== arr[i]) {
+                if (NaNBol &amp;amp;&amp;amp; r.indexOf(arr[i]) === -1) {
+                    r.push(arr[i])
+                    NaNBol = false
+                }
+            }else{
+                if(r.indexOf(arr[i]) === -1) r.push(arr[i])
+            }
+        }
+        return r
+    }
+
+     */
+}
+
+/*求两个集合的并集*/
+union (a, b) {
+    var newArr = a.concat(b);
+    return this.unique(newArr);
+}
+
+/*求两个集合的交集*/
+intersect (a, b) {
+    var _this = this;
+    a = this.unique(a);
+    return this.map(a, function(o) {
+        return _this.contains(b, o) ? o : null;
+    });
+}
+
+/*删除其中一个元素*/
+remove (arr, ele) {
+    var index = arr.indexOf(ele);
+    if(index &amp;gt; -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+
+/*将类数组转换为数组的方法*/
+formArray (ary) {
+    var arr = [];
+    if(Array.isArray(ary)) {
+        arr = ary;
+    } else {
+        arr = Array.prototype.slice.call(ary);
+    };
+    return arr;
+}
+
+/*最大值*/
+max (arr) {
+    return Math.max.apply(null, arr);
+}
+
+/*最小值*/
+min (arr) {
+    return Math.min.apply(null, arr);
+}
+
+/*求和*/
+sum (arr) {
+    return arr.reduce( (pre, cur) =&amp;gt; {
+        return pre + cur
+    })
+}
+
+/*平均值*/
+average (arr) {
+    return this.sum(arr)/arr.length
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br></div></div><h3 id="_4-string-字符串操作"><a href="#_4-string-字符串操作" class="header-anchor">#</a> 4. String 字符串操作</h3> <div class="language-/** line-numbers-mode"><pre class="language-text"><code> * 去除空格
+ * @param  {str}
+ * @param  {type} 
+ *       type:  1-所有空格  2-前后空格  3-前空格 4-后空格
+ * @return {String}
+ */
+trim (str, type) {
+    type = type || 1
+    switch (type) {
+        case 1:
+            return str.replace(/\s+/g, &quot;&quot;);
+        case 2:
+            return str.replace(/(^\s*)|(\s*$)/g, &quot;&quot;);
+        case 3:
+            return str.replace(/(^\s*)/g, &quot;&quot;);
+        case 4:
+            return str.replace(/(\s*$)/g, &quot;&quot;);
+        default:
+            return str;
+    }
+}
+
+/**
+ * @param  {str} 
+ * @param  {type}
+ *       type:  1:首字母大写  2：首页母小写  3：大小写转换  4：全部大写  5：全部小写
+ * @return {String}
+ */
+changeCase (str, type) {
+    type = type || 4
+    switch (type) {
+        case 1:
+            return str.replace(/\b\w+\b/g, function (word) {
+                return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+
+            });
+        case 2:
+            return str.replace(/\b\w+\b/g, function (word) {
+                return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase();
+            });
+        case 3:
+            return str.split('').map( function(word){
+                if (/[a-z]/.test(word)) {
+                    return word.toUpperCase();
+                }else{
+                    return word.toLowerCase()
+                }
+            }).join('')
+        case 4:
+            return str.toUpperCase();
+        case 5:
+            return str.toLowerCase();
+        default:
+            return str;
+    }
+}
+
+/*
+    检测密码强度
+*/
+checkPwd (str) {
+    var Lv = 0;
+    if (str.length &amp;lt; 6) {
+        return Lv
+    }
+    if (/[0-9]/.test(str)) {
+        Lv++
+    }
+    if (/[a-z]/.test(str)) {
+        Lv++
+    }
+    if (/[A-Z]/.test(str)) {
+        Lv++
+    }
+    if (/[\.|-|_]/.test(str)) {
+        Lv++
+    }
+    return Lv;
+}
+
+/*过滤html代码(把&amp;lt;&amp;gt;转换)*/
+filterTag (str) {
+    str = str.replace(/&amp;amp;/ig, &quot;&amp;amp;&quot;);
+    str = str.replace(/&amp;lt;/ig, &quot;&amp;lt;&quot;);
+    str = str.replace(/&amp;gt;/ig, &quot;&amp;gt;&quot;);
+    str = str.replace(&quot; &quot;, &quot; &quot;);
+    return str;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br></div></div><h3 id="_5-number"><a href="#_5-number" class="header-anchor">#</a> 5. Number</h3> <div class="language-/*随机数范围*/ line-numbers-mode"><pre class="language-text"><code>random (min, max) {
+    if (arguments.length === 2) {
+        return Math.floor(min + Math.random() * ( (max+1) - min ))
+    }else{
+        return null;
+    }
+
+}
+
+/*将阿拉伯数字翻译成中文的大写数字*/
+numberToChinese (num) {
+    var AA = new Array(&quot;零&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;, &quot;六&quot;, &quot;七&quot;, &quot;八&quot;, &quot;九&quot;, &quot;十&quot;);
+    var BB = new Array(&quot;&quot;, &quot;十&quot;, &quot;百&quot;, &quot;仟&quot;, &quot;萬&quot;, &quot;億&quot;, &quot;点&quot;, &quot;&quot;);
+    var a = (&quot;&quot; + num).replace(/(^0*)/g, &quot;&quot;).split(&quot;.&quot;),
+        k = 0,
+        re = &quot;&quot;;
+    for(var i = a[0].length - 1; i &amp;gt;= 0; i--) {
+        switch(k) {
+            case 0:
+                re = BB[7] + re;
+                break;
+            case 4:
+                if(!new RegExp(&quot;0{4}//d{&quot; + (a[0].length - i - 1) + &quot;}$&quot;)
+                    .test(a[0]))
+                    re = BB[4] + re;
+                break;
+            case 8:
+                re = BB[5] + re;
+                BB[7] = BB[5];
+                k = 0;
+                break;
+        }
+        if(k % 4 == 2 &amp;amp;&amp;amp; a[0].charAt(i + 2) != 0 &amp;amp;&amp;amp; a[0].charAt(i + 1) == 0)
+            re = AA[0] + re;
+        if(a[0].charAt(i) != 0)
+            re = AA[a[0].charAt(i)] + BB[k % 4] + re;
+        k++;
+    }
+
+    if(a.length &amp;gt; 1) // 加上小数部分(如果有小数部分)
+    {
+        re += BB[6];
+        for(var i = 0; i &amp;lt; a[1].length; i++)
+            re += AA[a[1].charAt(i)];
+    }
+    if(re == '一十')
+        re = &quot;十&quot;;
+    if(re.match(/^一/) &amp;amp;&amp;amp; re.length == 3)
+        re = re.replace(&quot;一&quot;, &quot;&quot;);
+    return re;
+}
+
+/*将数字转换为大写金额*/
+changeToChinese (Num) {
+        //判断如果传递进来的不是字符的话转换为字符
+        if(typeof Num == &quot;number&quot;) {
+            Num = new String(Num);
+        };
+        Num = Num.replace(/,/g, &quot;&quot;) //替换tomoney()中的“,”
+        Num = Num.replace(/ /g, &quot;&quot;) //替换tomoney()中的空格
+        Num = Num.replace(/￥/g, &quot;&quot;) //替换掉可能出现的￥字符
+        if(isNaN(Num)) { //验证输入的字符是否为数字
+            //alert(&quot;请检查小写金额是否正确&quot;);
+            return &quot;&quot;;
+        };
+        //字符处理完毕后开始转换，采用前后两部分分别转换
+        var part = String(Num).split(&quot;.&quot;);
+        var newchar = &quot;&quot;;
+        //小数点前进行转化
+        for(var i = part[0].length - 1; i &amp;gt;= 0; i--) {
+            if(part[0].length &amp;gt; 10) {
+                return &quot;&quot;;
+                //若数量超过拾亿单位，提示
+            }
+            var tmpnewchar = &quot;&quot;
+            var perchar = part[0].charAt(i);
+            switch(perchar) {
+                case &quot;0&quot;:
+                    tmpnewchar = &quot;零&quot; + tmpnewchar;
+                    break;
+                case &quot;1&quot;:
+                    tmpnewchar = &quot;壹&quot; + tmpnewchar;
+                    break;
+                case &quot;2&quot;:
+                    tmpnewchar = &quot;贰&quot; + tmpnewchar;
+                    break;
+                case &quot;3&quot;:
+                    tmpnewchar = &quot;叁&quot; + tmpnewchar;
+                    break;
+                case &quot;4&quot;:
+                    tmpnewchar = &quot;肆&quot; + tmpnewchar;
+                    break;
+                case &quot;5&quot;:
+                    tmpnewchar = &quot;伍&quot; + tmpnewchar;
+                    break;
+                case &quot;6&quot;:
+                    tmpnewchar = &quot;陆&quot; + tmpnewchar;
+                    break;
+                case &quot;7&quot;:
+                    tmpnewchar = &quot;柒&quot; + tmpnewchar;
+                    break;
+                case &quot;8&quot;:
+                    tmpnewchar = &quot;捌&quot; + tmpnewchar;
+                    break;
+                case &quot;9&quot;:
+                    tmpnewchar = &quot;玖&quot; + tmpnewchar;
+                    break;
+            }
+            switch(part[0].length - i - 1) {
+                case 0:
+                    tmpnewchar = tmpnewchar + &quot;元&quot;;
+                    break;
+                case 1:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;拾&quot;;
+                    break;
+                case 2:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;佰&quot;;
+                    break;
+                case 3:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;仟&quot;;
+                    break;
+                case 4:
+                    tmpnewchar = tmpnewchar + &quot;万&quot;;
+                    break;
+                case 5:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;拾&quot;;
+                    break;
+                case 6:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;佰&quot;;
+                    break;
+                case 7:
+                    if(perchar != 0) tmpnewchar = tmpnewchar + &quot;仟&quot;;
+                    break;
+                case 8:
+                    tmpnewchar = tmpnewchar + &quot;亿&quot;;
+                    break;
+                case 9:
+                    tmpnewchar = tmpnewchar + &quot;拾&quot;;
+                    break;
+            }
+            var newchar = tmpnewchar + newchar;
+        }
+        //小数点之后进行转化
+        if(Num.indexOf(&quot;.&quot;) != -1) {
+            if(part[1].length &amp;gt; 2) {
+                // alert(&quot;小数点之后只能保留两位,系统将自动截断&quot;);
+                part[1] = part[1].substr(0, 2)
+            }
+            for(i = 0; i &amp;lt; part[1].length; i++) {
+                tmpnewchar = &quot;&quot;
+                perchar = part[1].charAt(i)
+                switch(perchar) {
+                    case &quot;0&quot;:
+                        tmpnewchar = &quot;零&quot; + tmpnewchar;
+                        break;
+                    case &quot;1&quot;:
+                        tmpnewchar = &quot;壹&quot; + tmpnewchar;
+                        break;
+                    case &quot;2&quot;:
+                        tmpnewchar = &quot;贰&quot; + tmpnewchar;
+                        break;
+                    case &quot;3&quot;:
+                        tmpnewchar = &quot;叁&quot; + tmpnewchar;
+                        break;
+                    case &quot;4&quot;:
+                        tmpnewchar = &quot;肆&quot; + tmpnewchar;
+                        break;
+                    case &quot;5&quot;:
+                        tmpnewchar = &quot;伍&quot; + tmpnewchar;
+                        break;
+                    case &quot;6&quot;:
+                        tmpnewchar = &quot;陆&quot; + tmpnewchar;
+                        break;
+                    case &quot;7&quot;:
+                        tmpnewchar = &quot;柒&quot; + tmpnewchar;
+                        break;
+                    case &quot;8&quot;:
+                        tmpnewchar = &quot;捌&quot; + tmpnewchar;
+                        break;
+                    case &quot;9&quot;:
+                        tmpnewchar = &quot;玖&quot; + tmpnewchar;
+                        break;
+                }
+                if(i == 0) tmpnewchar = tmpnewchar + &quot;角&quot;;
+                if(i == 1) tmpnewchar = tmpnewchar + &quot;分&quot;;
+                newchar = newchar + tmpnewchar;
+            }
+        }
+        //替换所有无用汉字
+        while(newchar.search(&quot;零零&quot;) != -1)
+            newchar = newchar.replace(&quot;零零&quot;, &quot;零&quot;);
+        newchar = newchar.replace(&quot;零亿&quot;, &quot;亿&quot;);
+        newchar = newchar.replace(&quot;亿万&quot;, &quot;亿&quot;);
+        newchar = newchar.replace(&quot;零万&quot;, &quot;万&quot;);
+        newchar = newchar.replace(&quot;零元&quot;, &quot;元&quot;);
+        newchar = newchar.replace(&quot;零角&quot;, &quot;&quot;);
+        newchar = newchar.replace(&quot;零分&quot;, &quot;&quot;);
+        if(newchar.charAt(newchar.length - 1) == &quot;元&quot;) {
+            newchar = newchar + &quot;整&quot;
+        }
+        return newchar;
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br></div></div><h3 id="_6-http"><a href="#_6-http" class="header-anchor">#</a> 6. Http</h3> <div class="language-/** line-numbers-mode"><pre class="language-text"><code> * @param  {setting}
+ */
+ajax(setting){
+    //设置参数的初始值
+    var opts={
+        method: (setting.method || &quot;GET&quot;).toUpperCase(), //请求方式
+        url: setting.url || &quot;&quot;, // 请求地址
+        async: setting.async || true, // 是否异步
+        dataType: setting.dataType || &quot;json&quot;, // 解析方式
+        data: setting.data || &quot;&quot;, // 参数
+        success: setting.success || function(){}, // 请求成功回调
+        error: setting.error || function(){} // 请求失败回调
+    }
+
+    // 参数格式化
+    function params_format (obj) {
+        var str = ''
+        for (var i in obj) {
+            str += i + '=' + obj[i] + '&amp;amp;'
+        }
+        return str.split('').slice(0, -1).join('')
+    }
+
+    // 创建ajax对象
+    var xhr=new XMLHttpRequest();
+
+    // 连接服务器open(方法GET/POST，请求地址， 异步传输)
+    if(opts.method == 'GET'){
+        xhr.open(opts.method, opts.url + &quot;?&quot; + params_format(opts.data), opts.async);
+        xhr.send();
+    }else{
+        xhr.open(opts.method, opts.url, opts.async);
+        xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+        xhr.send(opts.data);
+    }
+
+    /*
+    ** 每当readyState改变时，就会触发onreadystatechange事件
+    ** readyState属性存储有XMLHttpRequest的状态信息
+    ** 0 ：请求未初始化
+    ** 1 ：服务器连接已建立
+    ** 2 ：请求已接受
+    ** 3 : 请求处理中
+    ** 4 ：请求已完成，且相应就绪
+    */
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 &amp;amp;&amp;amp; (xhr.status === 200 || xhr.status === 304)) {
+            switch(opts.dataType){
+                case &quot;json&quot;:
+                    var json = JSON.parse(xhr.responseText);
+                    opts.success(json);
+                    break;
+                case &quot;xml&quot;:
+                    opts.success(xhr.responseXML);
+                    break;
+                default:
+                    opts.success(xhr.responseText);
+                    break;
+            }
+        }
+    }
+
+    xhr.onerror = function(err) {
+        opts.error(err);
+    }
+}
+
+/**
+ * @param  {url}
+ * @param  {setting}
+ * @return {Promise}
+ */
+fetch(url, setting) {
+    //设置参数的初始值
+    let opts={
+        method: (setting.method || 'GET').toUpperCase(), //请求方式
+        headers : setting.headers  || {}, // 请求头设置
+        credentials : setting.credentials  || true, // 设置cookie是否一起发送
+        body: setting.body || {},
+        mode : setting.mode  || 'no-cors', // 可以设置 cors, no-cors, same-origin
+        redirect : setting.redirect  || 'follow', // follow, error, manual
+        cache : setting.cache  || 'default' // 设置 cache 模式 (default, reload, no-cache)
+    }
+    let dataType = setting.dataType || &quot;json&quot;, // 解析方式  
+        data = setting.data || &quot;&quot; // 参数
+
+    // 参数格式化
+    function params_format (obj) {
+        var str = ''
+        for (var i in obj) {
+            str += `${i}=${obj[i]}&amp;amp;`
+        }
+        return str.split('').slice(0, -1).join('')
+    }
+
+    if (opts.method === 'GET') {
+        url = url + (data?`?${params_format(data)}`:'')
+    }else{
+        setting.body = data || {}
+    }
+
+    return new Promise( (resolve, reject) =&amp;gt; {
+        fetch(url, opts).then( async res =&amp;gt; {
+            let data = dataType === 'text' ? await res.text() :
+                dataType === 'blob' ? await res.blob() : await res.json() 
+            resolve(data)
+        }).catch( e =&amp;gt; {
+            reject(e)
+        })
+    })
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br></div></div><h3 id="_7-dom"><a href="#_7-dom" class="header-anchor">#</a> 7. DOM</h3> <div class="language-$ (selector){ line-numbers-mode"><pre class="language-text"><code>    var type = selector.substring(0, 1);
+    if (type === '#') {
+        if (document.querySelecotor) return document.querySelector(selector)
+            return document.getElementById(selector.substring(1))
+
+    }else if (type === '.') {
+        if (document.querySelecotorAll) return document.querySelectorAll(selector)
+            return document.getElementsByClassName(selector.substring(1))
+    }else{
+        return document['querySelectorAll' ? 'querySelectorAll':'getElementsByTagName'](selector)
+    }
+} 
+
+/*检测类名*/
+hasClass (ele, name) {
+    return ele.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'));
+}
+
+/*添加类名*/
+addClass (ele, name) {
+    if (!this.hasClass(ele, name)) ele.className += &quot; &quot; + name;
+}
+
+/*删除类名*/
+removeClass (ele, name) {
+    if (this.hasClass(ele, name)) {
+        var reg = new RegExp('(\\s|^)' + name + '(\\s|$)');
+        ele.className = ele.className.replace(reg, '');
+    }
+}
+
+/*替换类名*/
+replaceClass (ele, newName, oldName) {
+    this.removeClass(ele, oldName);
+    this.addClass(ele, newName);
+}
+
+/*获取兄弟节点*/
+siblings (ele) {
+    console.log(ele.parentNode)
+    var chid = ele.parentNode.children,eleMatch = []; 
+    for(var i = 0, len = chid.length; i &amp;lt; len; i ++){ 
+        if(chid[i] != ele){ 
+            eleMatch.push(chid[i]); 
+        } 
+    } 
+    return eleMatch;
+}
+
+/*获取行间样式属性*/
+getByStyle (obj,name){
+    if(obj.currentStyle){
+        return  obj.currentStyle[name];
+    }else{
+        return  getComputedStyle(obj,false)[name];
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h3 id="_8-storage-储存操作"><a href="#_8-storage-储存操作" class="header-anchor">#</a> 8. Storage 储存操作</h3> <div class="language-class StorageFn { line-numbers-mode"><pre class="language-text"><code>    constructor () {
+        this.ls = window.localStorage;
+        this.ss = window.sessionStorage;
+    }
+
+    /*-----------------cookie---------------------*/
+    /*设置cookie*/
+    setCookie (name, value, day) {
+        var setting = arguments[0];
+        if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
+            for (var i in setting) {
+                var oDate = new Date();
+                oDate.setDate(oDate.getDate() + day);
+                document.cookie = i + '=' + setting[i] + ';expires=' + oDate;
+            }
+        }else{
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + day);
+            document.cookie = name + '=' + value + ';expires=' + oDate;
+        }
+
+    }
+
+    /*获取cookie*/
+    getCookie (name) {
+        var arr = document.cookie.split('; ');
+        for (var i = 0; i &amp;lt; arr.length; i++) {
+            var arr2 = arr[i].split('=');
+            if (arr2[0] == name) {
+                return arr2[1];
+            }
+        }
+        return '';
+    }
+
+    /*删除cookie*/
+    removeCookie (name) {
+        this.setCookie(name, 1, -1);
+    }
+
+    /*-----------------localStorage---------------------*/
+    /*设置localStorage*/
+    setLocal(key, val) {
+        var setting = arguments[0];
+        if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
+            for(var i in setting){
+                this.ls.setItem(i, JSON.stringify(setting[i]))
+            }
+        }else{
+            this.ls.setItem(key, JSON.stringify(val))
+        }
+
+    }
+
+    /*获取localStorage*/
+    getLocal(key) {
+        if (key) return JSON.parse(this.ls.getItem(key))
+        return null;
+
+    }
+
+    /*移除localStorage*/
+    removeLocal(key) {
+        this.ls.removeItem(key)
+    }
+
+    /*移除所有localStorage*/
+    clearLocal() {
+        this.ls.clear()
+    }
+
+    /*-----------------sessionStorage---------------------*/
+    /*设置sessionStorage*/
+    setSession(key, val) {
+        var setting = arguments[0];
+        if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
+            for(var i in setting){
+                this.ss.setItem(i, JSON.stringify(setting[i]))
+            }
+        }else{
+            this.ss.setItem(key, JSON.stringify(val))
+        }
+
+    }
+
+    /*获取sessionStorage*/
+    getSession(key) {
+        if (key) return JSON.parse(this.ss.getItem(key))
+        return null;
+
+    }
+
+    /*移除sessionStorage*/
+    removeSession(key) {
+        this.ss.removeItem(key)
+    }
+
+    /*移除所有sessionStorage*/
+    clearSession() {
+        this.ss.clear()
+    }
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br></div></div><h3 id="_9-other-其它操作"><a href="#_9-other-其它操作" class="header-anchor">#</a> 9. Other 其它操作</h3> <div class="language-/*获取网址参数*/ line-numbers-mode"><pre class="language-text"><code>getURL(name){
+    var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);
+    var r = decodeURI(window.location.search).substr(1).match(reg);
+    if(r!=null) return  r[2]; return null;
+}
+
+/*获取全部url参数,并转换成json对象*/
+getUrlAllParams (url) {
+    var url = url ? url : window.location.href;
+    var _pa = url.substring(url.indexOf('?') + 1),
+        _arrS = _pa.split('&amp;amp;'),
+        _rs = {};
+    for (var i = 0, _len = _arrS.length; i &amp;lt; _len; i++) {
+        var pos = _arrS[i].indexOf('=');
+        if (pos == -1) {
+            continue;
+        }
+        var name = _arrS[i].substring(0, pos),
+            value = window.decodeURIComponent(_arrS[i].substring(pos + 1));
+        _rs[name] = value;
+    }
+    return _rs;
+}
+
+/*删除url指定参数，返回url*/
+delParamsUrl(url, name){
+    var baseUrl = url.split('?')[0] + '?';
+    var query = url.split('?')[1];
+    if (query.indexOf(name)&amp;gt;-1) {
+        var obj = {}
+        var arr = query.split(&quot;&amp;amp;&quot;);
+        for (var i = 0; i &amp;lt; arr.length; i++) {
+            arr[i] = arr[i].split(&quot;=&quot;);
+            obj[arr[i][0]] = arr[i][1];
+        };
+        delete obj[name];
+        var url = baseUrl + JSON.stringify(obj).replace(/[\&quot;\{\}]/g,&quot;&quot;).replace(/\:/g,&quot;=&quot;).replace(/\,/g,&quot;&amp;amp;&quot;);
+        return url
+    }else{
+        return url;
+    }
+}
+
+/*获取十六进制随机颜色*/
+getRandomColor () {
+    return '#' + (function(h) {
+        return new Array(7 - h.length).join(&quot;0&quot;) + h;
+    })((Math.random() * 0x1000000 &amp;lt;&amp;lt; 0).toString(16));
+}
+
+/*图片加载*/
+imgLoadAll(arr,callback){
+    var arrImg = []; 
+    for (var i = 0; i &amp;lt; arr.length; i++) {
+        var img = new Image();
+        img.src = arr[i];
+        img.onload = function(){
+            arrImg.push(this);
+            if (arrImg.length == arr.length) {
+                callback &amp;amp;&amp;amp; callback();
+            }
+        }
+    }
+}
+
+/*音频加载*/
+loadAudio(src, callback) {
+    var audio = new Audio(src);
+    audio.onloadedmetadata = callback;
+    audio.src = src;
+}
+
+/*DOM转字符串*/
+domToStirng(htmlDOM){
+    var div= document.createElement(&quot;div&quot;);
+    div.appendChild(htmlDOM);
+    return div.innerHTML
+}
+
+/*字符串转DOM*/
+stringToDom(htmlString){
+    var div= document.createElement(&quot;div&quot;);
+    div.innerHTML=htmlString;
+    return div.children[0];
+}
+
+/**
+ * 光标所在位置插入字符，并设置光标位置
+ * 
+ * @param {dom} 输入框
+ * @param {val} 插入的值
+ * @param {posLen} 光标位置处在 插入的值的哪个位置
+ */
+setCursorPosition (dom,val,posLen) {
+    var cursorPosition = 0;
+    if(dom.selectionStart){
+        cursorPosition = dom.selectionStart;
+    }
+    this.insertAtCursor(dom,val);
+    dom.focus();
+    console.log(posLen)
+    dom.setSelectionRange(dom.value.length,cursorPosition + (posLen || val.length));
+}
+
+/*光标所在位置插入字符*/
+insertAtCursor(dom, val) {
+    if (document.selection){
+        dom.focus();
+        sel = document.selection.createRange();
+        sel.text = val;
+        sel.select();
+    }else if (dom.selectionStart || dom.selectionStart == '0'){
+        let startPos = dom.selectionStart;
+        let endPos = dom.selectionEnd;
+        let restoreTop = dom.scrollTop;
+        dom.value = dom.value.substring(0, startPos) + val + dom.value.substring(endPos, dom.value.length);
+        if (restoreTop &amp;gt; 0){
+            dom.scrollTop = restoreTop;
+        }
+        dom.focus();
+        dom.selectionStart = startPos + val.length;
+        dom.selectionEnd = startPos + val.length;
+    } else {
+        dom.value += val;
+        dom.focus();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br></div></div><h2 id="css"><a href="#css" class="header-anchor">#</a> CSS</h2> <h2 id="_1-pc-reset-pc样式初始化"><a href="#_1-pc-reset-pc样式初始化" class="header-anchor">#</a> 1. pc-reset PC样式初始化</h2> <div class="language-/* normalize.css */ line-numbers-mode"><pre class="language-text"><code>
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+html [type=&quot;button&quot;],
+
+/* 1 */
+
+[type=&quot;reset&quot;],
+[type=&quot;submit&quot;] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+button::-moz-focus-inner,
+[type=&quot;button&quot;]::-moz-focus-inner,
+[type=&quot;reset&quot;]::-moz-focus-inner,
+[type=&quot;submit&quot;]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=&quot;button&quot;]:-moz-focusring,
+[type=&quot;reset&quot;]:-moz-focusring,
+[type=&quot;submit&quot;]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=&quot;checkbox&quot;],
+[type=&quot;radio&quot;] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+[type=&quot;number&quot;]::-webkit-inner-spin-button,
+[type=&quot;number&quot;]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=&quot;search&quot;] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+[type=&quot;search&quot;]::-webkit-search-cancel-button,
+[type=&quot;search&quot;]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+ ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+details,
+
+/* 1 */
+
+menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* reset */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br></div></div><h3 id="_2-phone-reset"><a href="#_2-phone-reset" class="header-anchor">#</a> 2. Phone-reset</h3> <div class="language-/* normalize.css */ line-numbers-mode"><pre class="language-text"><code>
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+html [type=&quot;button&quot;],
+
+/* 1 */
+
+[type=&quot;reset&quot;],
+[type=&quot;submit&quot;] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+button::-moz-focus-inner,
+[type=&quot;button&quot;]::-moz-focus-inner,
+[type=&quot;reset&quot;]::-moz-focus-inner,
+[type=&quot;submit&quot;]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=&quot;button&quot;]:-moz-focusring,
+[type=&quot;reset&quot;]:-moz-focusring,
+[type=&quot;submit&quot;]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=&quot;checkbox&quot;],
+[type=&quot;radio&quot;] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+[type=&quot;number&quot;]::-webkit-inner-spin-button,
+[type=&quot;number&quot;]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=&quot;search&quot;] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+[type=&quot;search&quot;]::-webkit-search-cancel-button,
+[type=&quot;search&quot;]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+ ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+details,
+
+/* 1 */
+
+menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* reset */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* 禁止选中文本 */
+  -webkit-user-select: none;
+  user-select: none;
+  font: Oswald, 'Open Sans', Helvetica, Arial, sans-serif
+}
+
+/* 禁止长按链接与图片弹出菜单 */
+
+a,
+img {
+  -webkit-touch-callout: none;
+}
+
+/*ios android去除自带阴影的样式*/
+
+a,
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input[type=&quot;text&quot;] {
+  -webkit-appearance: none;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br></div></div><h3 id="_3-公共样式提取"><a href="#_3-公共样式提取" class="header-anchor">#</a> 3. 公共样式提取</h3> <div class="language-/* 禁止选中文本 */ line-numbers-mode"><pre class="language-text"><code>.usn{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+/* 浮动 */
+.fl { float: left; }
+.fr { float: right; }
+.cf { zoom: 1; }
+.cf:after {
+    content:&quot;.&quot;;
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+}
+
+/* 元素类型 */
+.db { display: block; }
+.dn { display: none; }
+.di { display: inline }
+.dib {display: inline-block;}
+.transparent { opacity: 0 }
+
+/*文字排版、颜色*/
+.f12 { font-size:12px }
+.f14 { font-size:14px }
+.f16 { font-size:16px }
+.f18 { font-size:18px }
+.f20 { font-size:20px }
+.fb { font-weight:bold }
+.fn { font-weight:normal }
+.t2 { text-indent:2em }
+.red,a.red { color:#cc0031 }
+.darkblue,a.darkblue { color:#039 }
+.gray,a.gray { color:#878787 }
+.lh150 { line-height:150% }
+.lh180 { line-height:180% }
+.lh200 { line-height:200% }
+.unl { text-decoration:underline; }
+.no_unl { text-decoration:none; }
+.tl { text-align: left; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+.tj { text-align: justify; text-justify: inter-ideograph; }
+.wn { /* 强制不换行 */
+    word-wrap:normal;
+    white-space:nowrap;
+}
+.wb { /* 强制换行 */
+    white-space:normal;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.wp { /* 保持空白序列*/
+    overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;
+}
+.wes { /* 多出部分用省略号表示 , 用于一行 */
+    overflow:hidden;
+    word-wrap:normal;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.wes-2 { /* 适用于webkit内核和移动端 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+} 
+.wes-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.wes-4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+/* 溢出样式 */
+.ofh { overflow: hidden; }
+.ofs {overflow: scroll; }
+.ofa {overflow: auto; }
+.ofv {overflow: visible; }
+
+/* 定位方式 */
+.ps {position: static; }
+.pr {position: relative;zoom:1; }
+.pa {position: absolute; }
+.pf {position: fixed; }
+
+/* 垂直对齐方式 */
+.vt {vertical-align: top; }
+.vm {vertical-align: middle; }
+.vb {vertical-align: bottom; }
+
+/* 鼠标样式 */
+.csd {cursor: default; }
+.csp {cursor: pointer; }
+.csh {cursor: help; }
+.csm {cursor: move; }
+
+/* flex布局 */
+.df-sb {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.df-sa {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* 垂直居中 */
+.df-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tb-c {
+    text-align:center;
+    display:table-cell;
+    vertical-align:middle;
+}
+.ts-c {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+.ts-mc {
+    position: absolute;
+    left: 0;right: 0;
+    bottom: 0; top: 0;
+    margin: auto;
+}
+
+/* 辅助 */
+.mask-fixed-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left:0;top:0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+}
+.bg-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bg-cover-all {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br></div></div></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Jonathan-Rao/rdk-blog-dist/edit/master/docs/_posts/前端/Javascript 总结（常用工具类的封装）.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/tags/?tag=%E5%AD%A6%E4%B9%A0" title="标签">#学习</a><a href="/tags/?tag=%E7%9F%A5%E8%AF%86" title="标签">#知识</a><a href="/tags/?tag=JavaScript" title="标签">#JavaScript</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/01/13, 8:01:00</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/eabcb8/"><div>
+            前端工程师生产环境 debugger 技巧
+            <!----></div></a> <span class="date">10-17</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/2dd8e1/"><div>
+            独立开发者资源
+            <!----></div></a> <span class="date">09-05</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/1bf551/"><div>
+            Vis-Network中文API文档
+            <!----></div></a> <span class="date">09-29</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:515977826@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/Jonathan-Rao" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2025
+    <span>DK Rao | MIT License</span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.63f7405e.js" defer></script><script src="/assets/js/3.4c003ae3.js" defer></script><script src="/assets/js/2.1e9afdb9.js" defer></script><script src="/assets/js/53.2c4a3f34.js" defer></script>
+  </body>
+</html>

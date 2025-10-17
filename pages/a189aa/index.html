@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>es6学习 | DK Rao&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.21b825ed.css" as="style"><link rel="preload" href="/assets/js/app.63f7405e.js" as="script"><link rel="preload" href="/assets/js/3.4c003ae3.js" as="script"><link rel="preload" href="/assets/js/2.1e9afdb9.js" as="script"><link rel="preload" href="/assets/js/59.25be9a24.js" as="script"><link rel="prefetch" href="/assets/js/1.dc850e31.js"><link rel="prefetch" href="/assets/js/10.5dbbc478.js"><link rel="prefetch" href="/assets/js/100.ff19186b.js"><link rel="prefetch" href="/assets/js/11.87e57194.js"><link rel="prefetch" href="/assets/js/12.4eece6bb.js"><link rel="prefetch" href="/assets/js/13.da88bff8.js"><link rel="prefetch" href="/assets/js/14.617fcb0e.js"><link rel="prefetch" href="/assets/js/15.e90ab816.js"><link rel="prefetch" href="/assets/js/16.217bdacc.js"><link rel="prefetch" href="/assets/js/17.2d36de58.js"><link rel="prefetch" href="/assets/js/18.09321884.js"><link rel="prefetch" href="/assets/js/19.b6545d31.js"><link rel="prefetch" href="/assets/js/20.3c7ccd65.js"><link rel="prefetch" href="/assets/js/21.9f3d9714.js"><link rel="prefetch" href="/assets/js/22.5bcf33e5.js"><link rel="prefetch" href="/assets/js/23.137a28d3.js"><link rel="prefetch" href="/assets/js/24.e9647410.js"><link rel="prefetch" href="/assets/js/25.e2f58923.js"><link rel="prefetch" href="/assets/js/26.dd88bede.js"><link rel="prefetch" href="/assets/js/27.3fa321d4.js"><link rel="prefetch" href="/assets/js/28.ef3548f7.js"><link rel="prefetch" href="/assets/js/29.9d932b65.js"><link rel="prefetch" href="/assets/js/30.3b1344cb.js"><link rel="prefetch" href="/assets/js/31.adb9ef94.js"><link rel="prefetch" href="/assets/js/32.ba3b310d.js"><link rel="prefetch" href="/assets/js/33.490aec31.js"><link rel="prefetch" href="/assets/js/34.3af32dbe.js"><link rel="prefetch" href="/assets/js/35.7ba2c423.js"><link rel="prefetch" href="/assets/js/36.45188d46.js"><link rel="prefetch" href="/assets/js/37.5aa1785c.js"><link rel="prefetch" href="/assets/js/38.2067f88b.js"><link rel="prefetch" href="/assets/js/39.f3777001.js"><link rel="prefetch" href="/assets/js/4.5cdec1e0.js"><link rel="prefetch" href="/assets/js/40.3e57f79d.js"><link rel="prefetch" href="/assets/js/41.6bab86e5.js"><link rel="prefetch" href="/assets/js/42.fc5c7ffb.js"><link rel="prefetch" href="/assets/js/43.882f3619.js"><link rel="prefetch" href="/assets/js/44.e0b4829e.js"><link rel="prefetch" href="/assets/js/45.9a8f29b4.js"><link rel="prefetch" href="/assets/js/46.e135ca80.js"><link rel="prefetch" href="/assets/js/47.a6036de5.js"><link rel="prefetch" href="/assets/js/48.d29a02a9.js"><link rel="prefetch" href="/assets/js/49.c7bc2bd4.js"><link rel="prefetch" href="/assets/js/5.250cdbf8.js"><link rel="prefetch" href="/assets/js/50.0b7f4d01.js"><link rel="prefetch" href="/assets/js/51.75cd77c1.js"><link rel="prefetch" href="/assets/js/52.9a8580a8.js"><link rel="prefetch" href="/assets/js/53.2c4a3f34.js"><link rel="prefetch" href="/assets/js/54.b5925329.js"><link rel="prefetch" href="/assets/js/55.9d030f6c.js"><link rel="prefetch" href="/assets/js/56.e9c1d955.js"><link rel="prefetch" href="/assets/js/57.2f34925d.js"><link rel="prefetch" href="/assets/js/58.a4eadcb3.js"><link rel="prefetch" href="/assets/js/6.d5177ab6.js"><link rel="prefetch" href="/assets/js/60.3494f023.js"><link rel="prefetch" href="/assets/js/61.57c595c0.js"><link rel="prefetch" href="/assets/js/62.f4e3be21.js"><link rel="prefetch" href="/assets/js/63.e40fa3d1.js"><link rel="prefetch" href="/assets/js/64.1464c9e9.js"><link rel="prefetch" href="/assets/js/65.ff5a9bdd.js"><link rel="prefetch" href="/assets/js/66.846ce21f.js"><link rel="prefetch" href="/assets/js/67.e2b7bec3.js"><link rel="prefetch" href="/assets/js/68.60d17170.js"><link rel="prefetch" href="/assets/js/69.34618919.js"><link rel="prefetch" href="/assets/js/70.fdb34293.js"><link rel="prefetch" href="/assets/js/71.d9d201ba.js"><link rel="prefetch" href="/assets/js/72.3a1c785d.js"><link rel="prefetch" href="/assets/js/73.f3d321c0.js"><link rel="prefetch" href="/assets/js/74.5f33d37c.js"><link rel="prefetch" href="/assets/js/75.281ea73f.js"><link rel="prefetch" href="/assets/js/76.465addf6.js"><link rel="prefetch" href="/assets/js/77.2564b7e8.js"><link rel="prefetch" href="/assets/js/78.a52c2e87.js"><link rel="prefetch" href="/assets/js/79.51c74067.js"><link rel="prefetch" href="/assets/js/80.dc3de84a.js"><link rel="prefetch" href="/assets/js/81.349bec82.js"><link rel="prefetch" href="/assets/js/82.fe3d6458.js"><link rel="prefetch" href="/assets/js/83.fececd3e.js"><link rel="prefetch" href="/assets/js/84.8abd5704.js"><link rel="prefetch" href="/assets/js/85.86950311.js"><link rel="prefetch" href="/assets/js/86.16cb092f.js"><link rel="prefetch" href="/assets/js/87.3e01636c.js"><link rel="prefetch" href="/assets/js/88.028ffdcf.js"><link rel="prefetch" href="/assets/js/89.0d2a51fb.js"><link rel="prefetch" href="/assets/js/9.23dd9dc1.js"><link rel="prefetch" href="/assets/js/90.8a58543f.js"><link rel="prefetch" href="/assets/js/91.eee5d437.js"><link rel="prefetch" href="/assets/js/92.458b922a.js"><link rel="prefetch" href="/assets/js/93.49ce0fe6.js"><link rel="prefetch" href="/assets/js/94.85821361.js"><link rel="prefetch" href="/assets/js/95.046b0fb4.js"><link rel="prefetch" href="/assets/js/96.b56d2320.js"><link rel="prefetch" href="/assets/js/97.7c1df4c9.js"><link rel="prefetch" href="/assets/js/98.7a0e133c.js"><link rel="prefetch" href="/assets/js/99.db916e56.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.db27a015.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.21b825ed.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/EB-logo.png" alt="DK Rao's Blog" class="logo"> <span class="site-name can-hide">DK Rao's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao/rdk-blog-dist" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://Jonathan-Rao.github.io/picx-images-hosting/20251017/f2097d47b248127e.mguj2u7f.jpg"> <div class="blogger-info"><h3>DK Rao</h3> <span>前端界的前行者</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/Jonathan-Rao/rdk-blog-dist" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>es6学习</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/a189aa/#_1、声明变量有变化-不再傻傻分不清" class="sidebar-link">1、声明变量有变化，不再傻傻分不清</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_2、作用域定义有变化-让你随手画个圈" class="sidebar-link">2、作用域定义有变化，让你随手画个圈</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_3、解构赋值二合一-省时省力好简洁" class="sidebar-link">3、解构赋值二合一，省时省力好简洁</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_4、有了字符串模板-远离-拼接" class="sidebar-link">4、有了字符串模板，远离+++拼接</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_5、函数增加新特性-箭头函数省省省-rest参数略略略" class="sidebar-link">5、函数增加新特性，箭头函数省省省，rest参数略略略</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_6、数组有了新方法-遍筛累加很省劲儿。" class="sidebar-link">6、数组有了新方法，遍筛累加很省劲儿。</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_7、对象继承新形式-声明继承更简单。" class="sidebar-link">7、对象继承新形式，声明继承更简单。</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_8、异步回调好麻烦-aysnc和await来帮忙" class="sidebar-link">8、异步回调好麻烦，aysnc和await来帮忙</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a189aa/#_9、模块导入新方法-import和export要配合" class="sidebar-link">9、模块导入新方法，import和export要配合</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><!----> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/Jonathan-Rao" target="_blank" title="作者" class="beLink" data-v-06225672>DK Rao</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-01-07</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-06225672><a href="/categories/?category=%E5%89%8D%E7%AB%AF" data-v-06225672>前端 </a></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">es6学习<!----></h1> <!----> <div class="theme-vdoing-content content__default"><blockquote><blockquote><p>说起es6大家都很熟悉，有些es6新特性chrome等高级浏览器已经实现，不用我们去编译了。今天我简单说下es6的一些特性，为什么写呢？一方面自娱自乐，一方面是因为我有段时间不用就会忘，我给自己回回炉。说的不对，大家给我留言拍砖哈。</p></blockquote> <h2 id="_1、声明变量有变化-不再傻傻分不清"><a href="#_1、声明变量有变化-不再傻傻分不清" class="header-anchor">#</a> 1、声明变量有变化，不再傻傻分不清</h2> <p>声明变量有两种方法，let和const。 let用来声明变量，const用来声明常量。</p> <p>什么是变量？变化的量。比如你的名字，公司地址。</p> <p>什么是常量？永远不会变的东西。比如你的生日，当然你伪造的话那就不算。</p> <p>平时我们声明var的变量可以重复声明，但let声明的变量不能重复声明，但是它们都可以重复赋值。</p> <p>const声明的常量即不能重复赋值也不能重复声明。</p> <h2 id="_2、作用域定义有变化-让你随手画个圈"><a href="#_2、作用域定义有变化-让你随手画个圈" class="header-anchor">#</a> 2、作用域定义有变化，让你随手画个圈</h2> <p>之前js的作用域是用function来定义的，一个function内是一个作用域。现在是通过{}来定义的， 一个花括号内是一个作用域。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//var声明的i
+var arr=[];
+for (var i=0; i&lt;10; i++){
+    arr[i]=function(){
+        console.log(i);
+    }
+}
+arr[6]();//var声明的i指向i的地址,所以是10
+
+//var声明的i如果要得到6，需要用一个立即执行和闭包。把i给num，
+
+//然后在function里面console.log(num)即可，每一个num都是一个新变量。
+	var arr=[];
+	for (var i=0; i&lt;10; i++){
+	    arr[i]=(function(num){
+	         return function () {
+            console.log(num);
+        }
+	    })(i);
+	}
+arr[6]();
+
+//let声明的i
+var arr=[];
+for (let i=0; i&lt;10; i++){
+//let声明的i在这个花括号内是一直存在的，到下次循环的时候i=i+1
+    arr[i]=function(){
+        console.log(i);
+    }
+}
+arr[6]();//6
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h2 id="_3、解构赋值二合一-省时省力好简洁"><a href="#_3、解构赋值二合一-省时省力好简洁" class="header-anchor">#</a> 3、解构赋值二合一，省时省力好简洁</h2> <p>用人话来说就是左边和右边结构一样。</p> <p>第一可以省一部分赋值代码，让代码看起来简洁。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let [a,b]=[1,2];
+console.log(a); //1
+console.log(b); //2
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>第二json简洁，提取方便。如果key和value是同样的命名，可以缩写。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let jsonData = {
+  id: 42,
+  status: &quot;OK&quot;,
+  data: [867, 5309]
+};
+
+let { id, status, data: number } = jsonData;
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_4、有了字符串模板-远离-拼接"><a href="#_4、有了字符串模板-远离-拼接" class="header-anchor">#</a> 4、有了字符串模板，远离+++拼接</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>let str=&quot;真好啊&quot;;
+console.log(&quot;今天天气&quot;+str+&quot;,心情也好！&quot;);
+//现在可以写成
+console.log(`今天天气${str},心情也好! `);
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_5、函数增加新特性-箭头函数省省省-rest参数略略略"><a href="#_5、函数增加新特性-箭头函数省省省-rest参数略略略" class="header-anchor">#</a> 5、函数增加新特性，箭头函数省省省，rest参数略略略</h2> <p>函数里面加了一个箭头函数和rest参数</p> <p>箭头函数可以极大的缩写我们的函数</p> <p>如果参数只有一个，可以省略function(); 如果有return 返回，可以省略{return };</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//一个参数和返回
+
+//以前
+let show=function(r){
+    return r;
+}
+
+//现在
+let show=r=&gt;r;
+
+//两个参数和返回
+let show=(a,b)=&gt;{return a+b};
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>写起来是不是看着更简洁了，当然如果你不常写的话，以我的经验就是你不出一周就忘了怎么写了。</p> <p>rest参数(...rest)顾名思义就是拿剩下的参数呗</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function show(a,b,...arg){
+    console.log(arg);
+}
+show(1,2,3,4,5);//[3,4,5]
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>而且rest参数还可以帮我们展开数组</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let arr=[1,2,3];
+console.log(...arr);
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>展开有什么用呢？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var arr1 = ['a', 'b'];
+var arr2 = ['c'];
+var arr3 = ['d', 'e'];
+// ES5 的合并数组
+arr1.concat(arr2, arr3);
+// [ 'a', 'b', 'c', 'd', 'e' ]
+// ES6 的合并数组
+[...arr1, ...arr2, ...arr3]
+// [ 'a', 'b', 'c', 'd', 'e' ]
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>可以看到展开后可以做合并和赋值。</p> <h2 id="_6、数组有了新方法-遍筛累加很省劲儿。"><a href="#_6、数组有了新方法-遍筛累加很省劲儿。" class="header-anchor">#</a> 6、数组有了新方法，遍筛累加很省劲儿。</h2> <p>map和forEach都可以遍历数组，既然都可以遍历数组，为什么要定义两个方法呢？</p> <p>其他这两个方法是有不同的地方的：</p> <p>内部代码在return的时候,forEach不会生成新数组。map会生成一个新数组。</p> <p>foreEach要想改变数组需要在callback函数中去改。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//map改变数组
+let arr=[1,3,5];
+let curArr=arr.map(function(item,index){
+    return item*2;
+});
+console.log(curArr);//[2,6,10]
+
+//forEach改变数组
+let arr=[1,3,5];
+let curArr=arr.forEach(function(item,index){
+    return arr[index]=item*2;
+})
+console.log(arr);//[2,6,10]
+console.log(curArr);//undefined;
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>filter是过滤器的意思，可以根据条件用来筛选数组中的元素。就好比流水线上的检查员，筛选出合格的产品。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let arr=[1,2,6];
+let curArr=arr.filter(function(item,index){
+    return item%2;
+})
+console.log(curArr);
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>reduce是减少的意思，它可以执行数组的累积运算然后返回一个数。就好比搭积木，多个积木最后搭成一个东西。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let arr=[1,2,6];
+let sum=arr.reduce(function(prev,cur,index,arr){
+//prev是前一步的操作和
+//cur是当前值
+//index是当前的索引
+//arr是当前的数组
+    return prev+cur;
+})
+console.log(sum);
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_7、对象继承新形式-声明继承更简单。"><a href="#_7、对象继承新形式-声明继承更简单。" class="header-anchor">#</a> 7、对象继承新形式，声明继承更简单。</h2> <p>我们先看下之前的对象声明和继承是怎么做的。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//定义父类
+function Animal(name,color){
+    this.name=name;
+    this.color=color;
+}
+Animal.prototype.showName=function(){
+    console.log(this.name);
+}
+Animal.prototype.showColor=function(){
+    console.log(this.color);
+}
+let obj1=new Animal('mimi','白色');
+obj1.showName();//mimi
+obj1.showColor();//白色 
+//定义子类
+function Cat(name,color,age){
+    Animal.apply(this,arguments);
+    this.age=age;
+}
+//继承
+Cat.prototype=new Animal();
+Cat.prototype.constructor=Cat;
+Cat.prototype.showAge=function(){
+    console.log(this.age);
+}
+let obj2=new Cat('hh','红色',3);
+obj2.showName();
+obj2.showColor();
+obj2.showAge();
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>之前的继承做法是通过原型链先指向父类的原型，然后把子类的构造函数指向定义的构造函数。</p> <p>这样原型链上就有了父类的方法，构造函数里面也会有父类的构造函数。</p> <p>这样定义有个问题就是类和构造函数是一起的，单把构造函数拿出来，也能做类也能做函数。</p> <p>es6里面更严谨了，声明类有了专门的class,继承有了extends</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//父类声明
+class Animal{
+   //构造函数声明
+    constructor(name,color){
+        this.name=name;
+        this.color=color;
+    }
+    //对象的方法声明
+    showName(){
+        console.log(this.name);
+    };
+    showColor(){
+        console.log(this.color);
+    }
+}
+let obj1=new Animal('mimi','白色');
+obj1.showName();//mimi
+obj1.showColor();//白色
+
+//子类使用extends继承
+class Cat extends Animal{
+   
+    constructor(name,color,age){
+        //构造函数内继承父类的构造函数
+        super(name,color);//super在这里代表了父类的构造函数
+        this.age=age;
+    }
+    showAge(){
+        console.log(this.age);
+    }
+}
+let obj2=new Cat('haha','红色',6);
+obj2.showAge();//6
+obj2.showName();//haha
+obj2.showColor();//红色
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="_8、异步回调好麻烦-aysnc和await来帮忙"><a href="#_8、异步回调好麻烦-aysnc和await来帮忙" class="header-anchor">#</a> 8、异步回调好麻烦，aysnc和await来帮忙</h2> <p>我们常见的异步回调会操作地狱回调，让你傻傻分不清，经常问自己，我代码在哪里呢？我逻辑走到哪里去了？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$.ajax({url:'/data.txt'},function(){//第一步
+   $.ajax({url:'/data2.txt'},function(){//第二步
+     $.ajax({url:'/data3.txt'},function(){//第三步
+        $.ajax({url:'/data4.txt'},function(){//第四步
+          $.ajax({url:'/data5.txt'},function(){//第五步
+    
+           })
+        })
+     })
+   }) 
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>如果我们用async和await就可以实现同步写法实现异步回调的作用。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> (async ()=&gt;{
+      let res=await $.ajax({
+          url: '/data.txt'
+       });
+       //第一步
+       console.log(res);
+        let res2=await $.ajax({
+          url: '/data2.txt'
+       });
+       //第二步
+      console.log(res2);
+      let res3=await $.ajax({
+          url: '/data3.txt'
+       });
+       //第三步
+      console.log(res3);
+      let res4=await $.ajax({
+          url: '/data4.txt'
+       });
+       //第四步
+      console.log(res4);
+      let res5=await $.ajax({
+          url: '/data5.txt'
+       });
+       //第五步
+      console.log(res5);
+ })()
+show();
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>当然现在有很多提到Promise，Promise链式调用，我们来看下如果用Promise要怎么用</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>   let p1=new Promise(function(resolve,reject){
+       $.ajax({
+            url: 'data.txt',       
+        })
+        .done(function(data) {
+           resolve(data);
+        })
+        .fail(function(err) {
+           reject(err);
+        }) 
+   }) 
+   p1.then(function(data){
+   //成功
+    console.log(data);
+    return $.ajax({url: 'data2.txt'})//抛出Promise
+   },function(err){
+   //失败
+    console.log(err);
+   })
+   //第二个Promise的处理
+   .then(function(data){
+       console.log(data);
+   },function(err){
+       console.log(err);
+   })
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>这里因为用的是jquery3.0的ajax,返回的其实是一个promise，你可以打出来ajax的看下。</p> <h2 id="_9、模块导入新方法-import和export要配合"><a href="#_9、模块导入新方法-import和export要配合" class="header-anchor">#</a> 9、模块导入新方法，import和export要配合</h2> <p>es6用export来暴露模块的属性和方法，用import来引入模块。</p> <p>a.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let a=2;
+let b=3;
+export {a,b}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>index.html</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;script type=&quot;module&quot;&gt;
+ import {a,b} from './a.js';
+ console.log(a);
+ console.log(b);
+ &lt;/script&gt;
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>在页面中引入模块，type是一定要声明的，目前在谷歌最新版本的浏览器中测试的时候，如果不声明会报错。</p></blockquote></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Jonathan-Rao/rdk-blog-dist/edit/master/docs/_posts/前端/es6学习.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/tags/?tag=%E5%AD%A6%E4%B9%A0" title="标签">#学习</a><a href="/tags/?tag=%E7%9F%A5%E8%AF%86" title="标签">#知识</a><a href="/tags/?tag=ECMAScript%206" title="标签">#ECMAScript 6</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/01/13, 8:01:00</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/eabcb8/"><div>
+            前端工程师生产环境 debugger 技巧
+            <!----></div></a> <span class="date">10-17</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/2dd8e1/"><div>
+            独立开发者资源
+            <!----></div></a> <span class="date">09-05</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/1bf551/"><div>
+            Vis-Network中文API文档
+            <!----></div></a> <span class="date">09-29</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:515977826@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/Jonathan-Rao" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2025
+    <span>DK Rao | MIT License</span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.63f7405e.js" defer></script><script src="/assets/js/3.4c003ae3.js" defer></script><script src="/assets/js/2.1e9afdb9.js" defer></script><script src="/assets/js/59.25be9a24.js" defer></script>
+  </body>
+</html>
